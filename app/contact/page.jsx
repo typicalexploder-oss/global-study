@@ -123,7 +123,7 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-8 text-base leading-8 text-black/60 sm:text-lg">
-                Whether you're exploring study destinations, choosing a course,
+                Whether you are exploring study destinations, choosing a course,
                 or preparing your application, our team is here to guide you at
                 every step.
               </p>
