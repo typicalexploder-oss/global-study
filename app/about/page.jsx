@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 
@@ -258,21 +259,21 @@ export default function AboutPage() {
                   pathway designed around your academic and career ambitions.
                 </p>
 
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="/contact"
-                    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
-                  >
-                    Book Free Consultation
-                  </a>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/contact"
+    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
+  >
+    Book Free Consultation
+  </Link>
 
-                  <a
-                    href="/countries/romania"
-                    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
-                  >
-                    Explore Destinations
-                  </a>
-                </div>
+  <Link
+    href="/countries/romania"
+    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
+  >
+    Explore Destinations
+  </Link>
+</div>
               </div>
             </motion.div>
           </Reveal>

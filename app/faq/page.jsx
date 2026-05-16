@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@/components/Reveal";
@@ -281,20 +281,20 @@ export default function FAQPage() {
               </p>
 
               <div className="mt-10 flex flex-col gap-4">
-                <a
-                  href="/contact"
-                  className="rounded-full bg-[#F5A623] px-8 py-4 text-center font-bold text-[#111111] transition hover:bg-[#FFD27A]"
-                >
-                  Contact Our Team
-                </a>
+  <Link
+    href="/contact"
+    className="rounded-full bg-[#F5A623] px-8 py-4 text-center font-bold text-[#111111] transition hover:bg-[#FFD27A]"
+  >
+    Contact Our Team
+  </Link>
 
-                <a
-                  href="/services"
-                  className="rounded-full border border-black/10 bg-[#F8F6F2] px-8 py-4 text-center font-semibold text-[#111111] transition hover:bg-[#111111] hover:text-white"
-                >
-                  Explore Services
-                </a>
-              </div>
+  <Link
+    href="/services"
+    className="rounded-full border border-black/10 bg-[#F8F6F2] px-8 py-4 text-center font-semibold text-[#111111] transition hover:bg-[#111111] hover:text-white"
+  >
+    Explore Services
+  </Link>
+</div>
             </motion.div>
           </Reveal>
         </div>
@@ -333,21 +333,21 @@ export default function FAQPage() {
                   support for your global education journey.
                 </p>
 
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="/contact"
-                    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
-                  >
-                    Contact Us
-                  </a>
+ <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/contact"
+    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
+  >
+    Contact Us
+  </Link>
 
-                  <a
-                    href="/courses"
-                    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
-                  >
-                    Explore Courses
-                  </a>
-                </div>
+  <Link
+    href="/courses"
+    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
+  >
+    Explore Courses
+  </Link>
+</div>
               </div>
             </motion.div>
           </Reveal>
