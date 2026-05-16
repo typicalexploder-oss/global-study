@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 
@@ -293,19 +293,19 @@ export default function SuccessStoriesPage() {
                 </p>
 
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="/contact"
+                  <Link
+  href="/contact"
                     className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
                   >
                     Book Free Consultation
-                  </a>
+                 </Link>
 
-                  <a
+                  <Link
                     href="/universities"
                     className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
                   >
                     Explore Universities
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
