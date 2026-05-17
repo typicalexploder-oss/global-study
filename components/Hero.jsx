@@ -41,13 +41,50 @@ export default function Hero() {
             </div>
 
             {/* HEADING */}
-            <h1 className="max-w-3xl text-[3.4rem] font-black leading-[0.95] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl">
-              Your future
-              <span className="block text-[#F5A623]">
-                begins beyond
-              </span>
-              borders.
-            </h1>
+           <motion.h1
+  className="text-5xl font-black leading-[0.9] tracking-[-0.05em] sm:text-6xl md:text-8xl"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+      },
+    },
+  }}
+>
+  {["Your", "future", "begins", "beyond", "borders."].map(
+    (word, index) => (
+      <motion.span
+        key={index}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 40,
+            filter: "blur(8px)",
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+          },
+        }}
+        transition={{
+          duration: 0.7,
+          ease: "easeOut",
+        }}
+        className={`mr-4 inline-block ${
+          word === "begins" ||
+          word === "beyond"
+            ? "text-[#F5A623]"
+            : "text-white"
+        }`}
+      >
+        {word}
+      </motion.span>
+    )
+  )}
+</motion.h1>
 
             {/* TEXT */}
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
