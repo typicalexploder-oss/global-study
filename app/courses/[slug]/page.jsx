@@ -150,6 +150,92 @@ const courses = {
       },
     ],
   },
+"online-mba": {
+  title: "Online MBA",
+  category: "Management",
+  duration: "2 Years",
+  tuition: "₹80,000 - ₹250,000",
+  salary: "$50,000 - $180,000+",
+  intake: "January, April & September",
+  image:
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1800&auto=format&fit=crop",
+  overview:
+    "Online MBA programs prepare students for leadership, business strategy, finance, and management careers.",
+
+  eligibility:
+    "Bachelor degree from a recognized university.",
+
+  scholarships:
+    "Merit scholarships and EMI options available.",
+
+  careers:
+    "Business Analyst, Marketing Manager, HR Manager, Entrepreneur, and Corporate Executive.",
+
+  curriculum: [
+    "Marketing",
+    "Finance",
+    "Leadership",
+    "Business Analytics",
+    "Operations",
+  ],
+
+  universities: [
+    "JAIN Online",
+    "Yenepoya Online",
+  ],
+
+  faqs: [
+    {
+      q: "Is Online MBA valid?",
+      a: "Yes, UGC-approved online MBA programs are valid and recognized.",
+    },
+  ],
+},
+
+"online-bca": {
+  title: "Online BCA",
+  category: "Computer Applications",
+  duration: "3 Years",
+  tuition: "₹60,000 - ₹180,000",
+  salary: "$40,000 - $140,000+",
+  intake: "January & July",
+  image:
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1800&auto=format&fit=crop",
+  overview:
+    "Online BCA programs focus on software development, programming, databases, and IT foundations.",
+
+  eligibility:
+    "12th pass with basic computer knowledge preferred.",
+
+  scholarships:
+    "Affordable fee structure and scholarship opportunities available.",
+
+  careers:
+    "Software Developer, Web Developer, IT Support, and App Development.",
+
+  curriculum: [
+    "Programming",
+    "Databases",
+    "Web Development",
+    "Networking",
+    "Cloud Basics",
+  ],
+
+  universities: [
+    "JAIN Online",
+    "Yenepoya Online",
+  ],
+
+  faqs: [
+    {
+      q: "Can I get an IT job after Online BCA?",
+      a: "Yes, Online BCA graduates can pursue various IT and software careers.",
+    },
+  ],
+},
+
+
+
 };
 
 export default function CoursePage({ params }) {
