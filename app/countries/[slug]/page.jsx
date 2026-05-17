@@ -7,74 +7,65 @@ import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 
 const countries = {
-india: {
-  name: "India",
-  tagline: "Flexible Online Degrees & Modern Learning",
+  india: {
+    name: "India",
+    tagline: "Flexible Online Degrees & Modern Learning",
 
-  image:
-    "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1800&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1800&auto=format&fit=crop",
 
-  description:
-    "India offers globally accessible online degree programs through top universities with affordable tuition, flexible schedules, and industry-focused education.",
+    description:
+      "India offers globally accessible online degree programs through top universities with affordable tuition, flexible schedules, and industry-focused education.",
 
-  highlights: [
-    "Affordable Online Degrees",
-    "UGC Approved Universities",
-    "Flexible Learning",
-    "Industry-Oriented Curriculum",
-  ],
+    highlights: [
+      "Affordable Online Degrees",
+      "UGC Approved Universities",
+      "Flexible Learning",
+      "Industry-Oriented Curriculum",
+    ],
 
-  programs: [
-    "Online MBA",
-    "BCA",
-    "MCA",
-    "BCom",
-    "BBA",
-  ],
+    programs: ["Online MBA", "BCA", "MCA", "BCom", "BBA"],
 
-  universities: [
-    "JAIN Online",
-    "Yenepoya Online",
-  ],
+    universities: ["JAIN Online", "Yenepoya Online"],
 
-  tuition: "$1,000 - $4,000 / year",
+    tuition: "$1,000 - $4,000 / year",
 
-  careers:
-    "Business Management, IT, Marketing, Finance, Data Analytics, Healthcare Administration.",
+    careers:
+      "Business Management, IT, Marketing, Finance, Data Analytics, Healthcare Administration.",
 
-  scholarships:
-    "Merit scholarships and flexible payment options available for selected programs.",
+    scholarships:
+      "Merit scholarships and flexible payment options available for selected programs.",
 
-  visa:
-    "No visa required for fully online international programs.",
+    visa:
+      "No visa required for fully online international programs.",
 
     faqs: [
-  {
-    q: "Are online degrees from Indian universities valid?",
-    a: "Yes. Universities like JAIN Online and Yenepoya Online offer UGC-approved online degree programs recognized across India and internationally.",
-  },
+      {
+        q: "Are online degrees from Indian universities valid?",
+        a: "Yes. Universities like JAIN Online and Yenepoya Online offer UGC-approved online degree programs recognized across India and internationally.",
+      },
 
-  {
-    q: "Can international students apply for online Indian programs?",
-    a: "Yes. Students from different countries can enroll in online programs without requiring a student visa.",
-  },
+      {
+        q: "Can international students apply for online Indian programs?",
+        a: "Yes. Students from different countries can enroll in online programs without requiring a student visa.",
+      },
 
-  {
-    q: "What are the most popular online programs?",
-    a: "MBA, BCA, MCA, BBA, and BCom are among the most demanded online programs.",
-  },
+      {
+        q: "What are the most popular online programs?",
+        a: "MBA, BCA, MCA, BBA, and BCom are among the most demanded online programs.",
+      },
 
-  {
-    q: "Are online classes flexible?",
-    a: "Yes. Most online universities provide recorded lectures, live sessions, and flexible learning schedules.",
+      {
+        q: "Are online classes flexible?",
+        a: "Yes. Most online universities provide recorded lectures, live sessions, and flexible learning schedules.",
+      },
+    ],
   },
-],
-},
-
 
   romania: {
     name: "Romania",
-    tagline: "Affordable European education with globally recognized degrees.",
+    tagline:
+      "Affordable European education with globally recognized degrees.",
     image:
       "https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1800&auto=format&fit=crop",
     tuition: "€3,000 - €8,000 / year",
@@ -119,7 +110,8 @@ india: {
 
   germany: {
     name: "Germany",
-    tagline: "World-class education and global career opportunities.",
+    tagline:
+      "World-class education and global career opportunities.",
     image:
       "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1800&auto=format&fit=crop",
     tuition: "€0 - €5,000 / year",
@@ -164,7 +156,8 @@ india: {
 
   singapore: {
     name: "Singapore",
-    tagline: "Asia’s innovation and technology education hub.",
+    tagline:
+      "Asia’s innovation and technology education hub.",
     image:
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1800&auto=format&fit=crop",
     tuition: "$8,000 - $25,000 / year",
@@ -205,75 +198,63 @@ india: {
       },
     ],
   },
-thailand: {
-  name: "Thailand",
-  tagline: "Affordable education with cultural diversity.",
-  image:
-    "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1800&auto=format&fit=crop",
-  tuition: "$2,000 - $8,000 / year",
-  living: "$300 - $800 / month",
-  intake: "January & August",
-  visa: "Student visa processing: 2-5 weeks",
-  duration: "2 - 4 Years",
-  eligibility:
-    "Academic transcripts, passport, and English proficiency.",
-  scholarships:
-    "Selected university scholarships available.",
-  careers:
-    "Hospitality, tourism, business, healthcare, and IT.",
-  universities: [
-    "Mahidol University",
-    "Chulalongkorn University",
-  ],
-  programs: [
-    "Business",
-    "Hospitality",
-    "IT",
-    "Healthcare",
-  ],
-  faqs: [
-    {
-      q: "Is Thailand affordable for students?",
-      a: "Yes, Thailand offers affordable tuition and living costs.",
-    },
-  ],
-},
 
-china: {
-  name: "China",
-  tagline: "Modern universities and global opportunities.",
-  image:
-    "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1800&auto=format&fit=crop",
-  tuition: "$3,000 - $10,000 / year",
-  living: "$400 - $900 / month",
-  intake: "March & September",
-  visa: "Student visa processing: 2-6 weeks",
-  duration: "3 - 5 Years",
-  eligibility:
-    "Academic records, passport, and university admission.",
-  scholarships:
-    "CSC scholarships and university grants available.",
-  careers:
-    "Engineering, medicine, AI, business, and technology.",
-  universities: [
-    "Tsinghua University",
-    "Peking University",
-  ],
-  programs: [
-    "Medicine",
-    "Engineering",
-    "AI",
-    "Business",
-  ],
-  faqs: [
-    {
-      q: "Is China good for international students?",
-      a: "Yes, China offers strong universities and modern campuses.",
-    },
-  ],
-},
+  thailand: {
+    name: "Thailand",
+    tagline:
+      "Affordable education with cultural diversity.",
+    image:
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1800&auto=format&fit=crop",
+    tuition: "$2,000 - $8,000 / year",
+    living: "$300 - $800 / month",
+    intake: "January & August",
+    visa: "Student visa processing: 2-5 weeks",
+    duration: "2 - 4 Years",
+    eligibility:
+      "Academic transcripts, passport, and English proficiency.",
+    scholarships:
+      "Selected university scholarships available.",
+    careers:
+      "Hospitality, tourism, business, healthcare, and IT.",
+    universities: [
+      "Mahidol University",
+      "Chulalongkorn University",
+    ],
+    programs: ["Business", "Hospitality", "IT", "Healthcare"],
+    faqs: [
+      {
+        q: "Is Thailand affordable for students?",
+        a: "Yes, Thailand offers affordable tuition and living costs.",
+      },
+    ],
+  },
 
-
+  china: {
+    name: "China",
+    tagline:
+      "Modern universities and global opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1800&auto=format&fit=crop",
+    tuition: "$3,000 - $10,000 / year",
+    living: "$400 - $900 / month",
+    intake: "March & September",
+    visa: "Student visa processing: 2-6 weeks",
+    duration: "3 - 5 Years",
+    eligibility:
+      "Academic records, passport, and university admission.",
+    scholarships:
+      "CSC scholarships and university grants available.",
+    careers:
+      "Engineering, medicine, AI, business, and technology.",
+    universities: ["Tsinghua University", "Peking University"],
+    programs: ["Medicine", "Engineering", "AI", "Business"],
+    faqs: [
+      {
+        q: "Is China good for international students?",
+        a: "Yes, China offers strong universities and modern campuses.",
+      },
+    ],
+  },
 };
 
 export default function CountryPage({ params }) {
@@ -285,19 +266,30 @@ export default function CountryPage({ params }) {
   }
 
   return (
-    <main className="relative overflow-hidden bg-[#0B0B0B] text-white">
-      {/* BG GLOWS */}
-      <div className="absolute left-0 top-40 h-[350px] w-[350px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
+
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-0 top-40 h-[350px] w-[350px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+
+        <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.04]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -310,7 +302,7 @@ export default function CountryPage({ params }) {
           <div className="mb-14">
             <Link
               href="/"
-              className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-[#111111]"
+              className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#07182B] backdrop-blur-xl transition hover:bg-[#07182B] hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
             >
               ← Back to Home
             </Link>
@@ -328,7 +320,7 @@ export default function CountryPage({ params }) {
                   {country.name}
                 </h1>
 
-                <p className="mt-8 max-w-2xl text-lg leading-9 text-white/65">
+                <p className="mt-8 max-w-2xl text-lg leading-9 text-black/65 dark:text-white/65">
                   {country.tagline}
                 </p>
 
@@ -336,7 +328,7 @@ export default function CountryPage({ params }) {
                   {country.programs.map((program) => (
                     <span
                       key={program}
-                      className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white/80"
+                      className="rounded-full border border-black/10 bg-white/70 px-5 py-3 text-sm font-medium text-[#07182B] backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-white/80"
                     >
                       {program}
                     </span>
@@ -349,7 +341,7 @@ export default function CountryPage({ params }) {
             <Reveal delay={0.1}>
               <motion.div
                 whileHover={{ y: -5 }}
-                className="overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
+                className="overflow-hidden rounded-[3rem] border border-black/10 shadow-[0_30px_120px_rgba(0,0,0,0.12)] dark:border-white/10 dark:shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
               >
                 <img
                   src={country.image}
@@ -363,7 +355,7 @@ export default function CountryPage({ params }) {
       </section>
 
       {/* INFO */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -373,7 +365,7 @@ export default function CountryPage({ params }) {
               ["Program Duration", country.duration],
             ].map(([title, value]) => (
               <Reveal key={title}>
-                <div className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+                <div className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                   <p className="text-xs uppercase tracking-[0.3em] text-[#B45309]">
                     {title}
                   </p>
@@ -390,12 +382,12 @@ export default function CountryPage({ params }) {
           <div className="mt-20 grid gap-10 lg:grid-cols-2">
             {/* LEFT */}
             <Reveal>
-              <div className="rounded-[3rem] border border-black/5 bg-white p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+              <div className="rounded-[3rem] border border-black/10 bg-white/85 p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-xs uppercase tracking-[0.3em] text-[#B45309]">
                   Eligibility
                 </p>
 
-                <p className="mt-6 text-lg leading-9 text-black/70">
+                <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                   {country.eligibility}
                 </p>
 
@@ -404,7 +396,7 @@ export default function CountryPage({ params }) {
                     Scholarships
                   </p>
 
-                  <p className="mt-6 text-lg leading-9 text-black/70">
+                  <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                     {country.scholarships}
                   </p>
                 </div>
@@ -414,7 +406,7 @@ export default function CountryPage({ params }) {
                     Visa Process
                   </p>
 
-                  <p className="mt-6 text-lg leading-9 text-black/70">
+                  <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                     {country.visa}
                   </p>
                 </div>
@@ -423,7 +415,7 @@ export default function CountryPage({ params }) {
 
             {/* RIGHT */}
             <Reveal delay={0.1}>
-              <div className="rounded-[3rem] border border-black/5 bg-white p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+              <div className="rounded-[3rem] border border-black/10 bg-white/85 p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-xs uppercase tracking-[0.3em] text-[#B45309]">
                   Top Universities
                 </p>
@@ -432,7 +424,7 @@ export default function CountryPage({ params }) {
                   {country.universities.map((uni) => (
                     <div
                       key={uni}
-                      className="rounded-2xl border border-black/5 bg-[#F8F6F2] p-5"
+                      className="rounded-2xl border border-black/10 bg-[#F7F9FC] p-5 dark:border-white/10 dark:bg-white/[0.03]"
                     >
                       <h3 className="text-xl font-bold">{uni}</h3>
                     </div>
@@ -444,7 +436,7 @@ export default function CountryPage({ params }) {
                     Career Opportunities
                   </p>
 
-                  <p className="mt-6 text-lg leading-9 text-black/70">
+                  <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                     {country.careers}
                   </p>
                 </div>
@@ -476,10 +468,12 @@ export default function CountryPage({ params }) {
                 key={faq.q}
                 delay={index * 0.08}
               >
-                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-2xl">
+                <div className="rounded-[2rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                   <h3 className="text-2xl font-black">{faq.q}</h3>
 
-                  <p className="mt-5 leading-8 text-white/65">{faq.a}</p>
+                  <p className="mt-5 leading-8 text-black/65 dark:text-white/65">
+                    {faq.a}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -493,21 +487,21 @@ export default function CountryPage({ params }) {
           <Reveal>
             <motion.div
               whileHover={{ y: -4 }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-[#F5A623]/15 via-white/[0.03] to-[#7C3AED]/10 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.4)] backdrop-blur-3xl md:p-16"
+              className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-gradient-to-br from-[#F5A623]/10 via-white/80 to-cyan-100/70 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] backdrop-blur-3xl transition-all duration-500 dark:border-white/10 dark:from-[#F5A623]/15 dark:via-white/[0.03] dark:to-[#7C3AED]/10 dark:shadow-[0_25px_100px_rgba(0,0,0,0.4)] md:p-16"
             >
               <div className="relative z-10 max-w-4xl">
                 <p className="mb-5 text-xs uppercase tracking-[0.3em] text-[#F5A623] sm:text-sm">
                   Start Your Journey
                 </p>
 
-                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#07182B] dark:text-white sm:text-5xl md:text-6xl">
                   Ready to study in {country.name}?
                 </h2>
 
-                <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
-                  Connect with our study abroad experts and receive
-                  personalized counselling, university guidance, visa support,
-                  and scholarship assistance.
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg">
+                  Connect with our study abroad experts and receive personalized
+                  counselling, university guidance, visa support, and
+                  scholarship assistance.
                 </p>
 
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -520,7 +514,7 @@ export default function CountryPage({ params }) {
 
                   <Link
                     href="/universities"
-                    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
+                    className="w-fit rounded-full border border-black/10 bg-white/70 px-8 py-4 font-semibold text-[#07182B] transition hover:bg-[#07182B] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
                   >
                     Explore Universities
                   </Link>

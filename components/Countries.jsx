@@ -8,17 +8,28 @@ export default function Countries() {
   return (
     <section
       id="countries"
-      className="relative overflow-hidden bg-[#f8f6f2] dark:bg-gradient-to-b dark:from-[#0B0B0B] dark:via-[#121212] dark:to-[#1A1A1A] px-5 py-20 text-[#111111] dark:text-white md:px-6 md:py-32"
+      className="relative overflow-hidden bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-gradient-to-b dark:from-[#06121F] dark:via-[#081726] dark:to-[#0D1B2A] dark:text-white md:px-6 md:py-32"
     >
-      {/* GLOWS */}
-      <div className="absolute left-0 top-40 h-[300px] w-[300px] rounded-full bg-[#7C3AED]/10 blur-3xl md:h-[400px] md:w-[400px]" />
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-0 top-20 h-[300px] w-[300px] rounded-full bg-purple-500/10 blur-3xl md:h-[400px] md:w-[400px]" />
+        <div className="absolute right-[-10%] top-32 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
 
-      <div className="absolute bottom-0 left-1/3 h-[250px] w-[250px] rounded-full bg-[#F5A623]/10 blur-3xl md:h-[350px] md:w-[350px]" />
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#7C3AED]/12 blur-[130px]" />
+
+        <div className="absolute right-[-10%] top-32 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[130px]" />
+
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-[#F5A623]/10 blur-[130px]" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.06]">
         <div
           className="h-full w-full"
           style={{
@@ -44,10 +55,10 @@ export default function Countries() {
               </span>
             </h2>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/60 md:mt-8 md:text-lg">
-              Discover international study opportunities across leading education
-              destinations with globally recognized universities, career pathways,
-              and student-focused environments.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 transition-colors duration-500 dark:text-white/60 md:mt-8 md:text-lg">
+              Discover international study opportunities across leading
+              education destinations with globally recognized universities,
+              career pathways, and student-focused environments.
             </p>
           </div>
         </Reveal>
@@ -66,7 +77,7 @@ export default function Countries() {
                 className="group relative block overflow-hidden rounded-[2.5rem] md:rounded-[3rem]"
               >
                 {/* CARD */}
-                <div className="relative h-[440px] overflow-hidden border border-black/10 dark:border-white/10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] dark:shadow-[0_25px_100px_rgba(0,0,0,0.45)] sm:h-[500px] md:h-[560px]">
+                <div className="relative h-[440px] overflow-hidden border border-black/10 bg-white/40 shadow-[0_25px_100px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-white/[0.03] dark:shadow-[0_25px_100px_rgba(0,0,0,0.45)] sm:h-[500px] md:h-[560px]">
                   {/* IMAGE */}
                   <img
                     src={country.image}
@@ -74,10 +85,15 @@ export default function Countries() {
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                   />
 
-                  {/* OVERLAYS */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/40 dark:from-black/80 dark:via-black/30 dark:to-black/40" />
+                  {/* LIGHT OVERLAY */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#07182B]/55 via-[#07182B]/20 to-[#07182B]/40 dark:hidden" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent dark:from-[#06121F] dark:via-transparent dark:to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent dark:hidden" />
+
+                  {/* DARK OVERLAY */}
+                  <div className="absolute inset-0 hidden bg-gradient-to-r from-black/80 via-black/30 to-black/50 dark:block" />
+
+                  <div className="absolute inset-0 hidden bg-gradient-to-t from-[#06121F] via-transparent to-transparent opacity-90 dark:block" />
 
                   {/* CONTENT */}
                   <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8 md:p-14">

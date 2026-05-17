@@ -5,21 +5,32 @@ import Reveal from "@/components/Reveal";
 
 export default function ApplyPage() {
   return (
-    <main className="relative overflow-hidden bg-[#070707] text-white">
-      {/* BACKGROUND GLOWS */}
-      <div className="absolute left-[-120px] top-20 h-[420px] w-[420px] rounded-full bg-[#7C3AED]/20 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-[-100px] top-40 h-[380px] w-[380px] rounded-full bg-[#F5A623]/20 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
 
-      <div className="absolute bottom-[-120px] left-1/3 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-[-120px] top-20 h-[420px] w-[420px] rounded-full bg-[#7C3AED]/20 blur-3xl" />
+
+        <div className="absolute right-[-100px] top-40 h-[380px] w-[380px] rounded-full bg-[#F5A623]/20 blur-3xl" />
+
+        <div className="absolute bottom-[-120px] left-1/3 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -41,7 +52,7 @@ export default function ApplyPage() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-3xl text-base leading-8 text-white/60 sm:text-lg md:text-xl md:leading-9">
+              <p className="mt-8 max-w-3xl text-base leading-8 text-black/60 dark:text-white/60 sm:text-lg md:text-xl md:leading-9">
                 Connect with our global education advisors and receive
                 personalized guidance for admissions, scholarships, visas,
                 universities, and career opportunities abroad.
@@ -59,18 +70,18 @@ export default function ApplyPage() {
             <Reveal>
               <motion.div
                 whileHover={{ y: -3 }}
-                className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.05] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur-3xl md:p-12"
+                className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-white/85 p-8 shadow-[0_30px_120px_rgba(0,0,0,0.12)] backdrop-blur-3xl dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:p-12"
               >
                 {/* INNER GLOW */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent pointer-events-none" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent" />
 
                 <div className="relative z-10">
                   <div className="mb-10">
-                    <h2 className="text-3xl font-black md:text-4xl">
+                    <h2 className="text-3xl font-black text-[#07182B] dark:text-white md:text-4xl">
                       Application Form
                     </h2>
 
-                    <p className="mt-4 text-white/55">
+                    <p className="mt-4 text-black/55 dark:text-white/55">
                       Fill out your details and our expert advisors will contact
                       you shortly.
                     </p>
@@ -79,50 +90,50 @@ export default function ApplyPage() {
                   <div className="grid gap-6 md:grid-cols-2">
                     {/* NAME */}
                     <div className="md:col-span-2">
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Full Name
                       </label>
 
                       <input
                         type="text"
                         placeholder="John Doe"
-                        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-white placeholder:text-white/30 outline-none transition duration-300 focus:border-[#F5A623] focus:bg-white/[0.07]"
+                        className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] placeholder:text-black/30 outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder:text-white/30 dark:focus:bg-white/[0.07]"
                       />
                     </div>
 
                     {/* EMAIL */}
                     <div>
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Email Address
                       </label>
 
                       <input
                         type="email"
                         placeholder="you@example.com"
-                        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-white placeholder:text-white/30 outline-none transition duration-300 focus:border-[#F5A623] focus:bg-white/[0.07]"
+                        className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] placeholder:text-black/30 outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder:text-white/30 dark:focus:bg-white/[0.07]"
                       />
                     </div>
 
                     {/* PHONE */}
                     <div>
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Phone Number
                       </label>
 
                       <input
                         type="tel"
                         placeholder="+91 9876543210"
-                        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-white placeholder:text-white/30 outline-none transition duration-300 focus:border-[#F5A623] focus:bg-white/[0.07]"
+                        className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] placeholder:text-black/30 outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder:text-white/30 dark:focus:bg-white/[0.07]"
                       />
                     </div>
 
                     {/* COUNTRY */}
                     <div>
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Preferred Country
                       </label>
 
-                      <select className="w-full rounded-2xl border border-white/10 bg-[#111111] px-6 py-4 text-white outline-none transition duration-300 focus:border-[#F5A623]">
+                      <select className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-[#111111] dark:text-white">
                         <option>India</option>
                         <option>Romania</option>
                         <option>Germany</option>
@@ -132,11 +143,11 @@ export default function ApplyPage() {
 
                     {/* COURSE */}
                     <div>
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Preferred Course
                       </label>
 
-                      <select className="w-full rounded-2xl border border-white/10 bg-[#111111] px-6 py-4 text-white outline-none transition duration-300 focus:border-[#F5A623]">
+                      <select className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-[#111111] dark:text-white">
                         <option>MBBS</option>
                         <option>Artificial Intelligence</option>
                         <option>Business Management</option>
@@ -145,11 +156,11 @@ export default function ApplyPage() {
 
                     {/* BUDGET */}
                     <div className="md:col-span-2">
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Budget Range
                       </label>
 
-                      <select className="w-full rounded-2xl border border-white/10 bg-[#111111] px-6 py-4 text-white outline-none transition duration-300 focus:border-[#F5A623]">
+                      <select className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-[#111111] dark:text-white">
                         <option>$5,000 - $10,000</option>
                         <option>$10,000 - $20,000</option>
                         <option>$20,000+</option>
@@ -158,25 +169,25 @@ export default function ApplyPage() {
 
                     {/* MESSAGE */}
                     <div className="md:col-span-2">
-                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-white/50">
+                      <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                         Additional Information
                       </label>
 
                       <textarea
                         rows="5"
                         placeholder="Tell us about your goals, preferred universities, academic background, or any questions..."
-                        className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-white placeholder:text-white/30 outline-none transition duration-300 focus:border-[#F5A623] focus:bg-white/[0.07]"
+                        className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-6 py-4 text-[#111111] placeholder:text-black/30 outline-none transition duration-300 focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder:text-white/30 dark:focus:bg-white/[0.07]"
                       />
                     </div>
                   </div>
 
                   {/* BUTTON */}
                   <a
-  href="/success"
-  className="inline-block mt-10 rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-10 py-4 font-bold text-[#111111] shadow-[0_10px_40px_rgba(245,166,35,0.35)] transition duration-300 hover:scale-[1.02] hover:shadow-[0_15px_60px_rgba(245,166,35,0.45)]"
->
-  Submit Application →
-</a>
+                    href="/success"
+                    className="mt-10 inline-block rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-10 py-4 font-bold text-[#111111] shadow-[0_10px_40px_rgba(245,166,35,0.35)] transition duration-300 hover:scale-[1.02] hover:shadow-[0_15px_60px_rgba(245,166,35,0.45)]"
+                  >
+                    Submit Application →
+                  </a>
                 </div>
               </motion.div>
             </Reveal>
@@ -208,7 +219,7 @@ export default function ApplyPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.08 }}
                     viewport={{ once: true }}
-                    className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.05] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-2xl"
+                    className="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.12)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent" />
 
@@ -217,11 +228,11 @@ export default function ApplyPage() {
                         {card.icon}
                       </div>
 
-                      <h3 className="text-3xl font-black">
+                      <h3 className="text-3xl font-black text-[#07182B] dark:text-white">
                         {card.title}
                       </h3>
 
-                      <p className="mt-5 leading-8 text-white/60">
+                      <p className="mt-5 leading-8 text-black/60 dark:text-white/60">
                         {card.text}
                       </p>
                     </div>

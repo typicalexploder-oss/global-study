@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
@@ -72,21 +73,32 @@ const testimonials = [
 
 export default function SuccessStoriesPage() {
   return (
-    <main className="relative overflow-hidden bg-[#0B0B0B] text-white">
-      {/* GLOWS */}
-      <div className="absolute left-0 top-20 h-[400px] w-[400px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
 
-      <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-0 top-20 h-[400px] w-[400px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+
+        <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+
+        <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -108,10 +120,10 @@ export default function SuccessStoriesPage() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-3xl text-base leading-8 text-white/65 sm:text-lg md:text-xl md:leading-9">
-                Explore how students transformed their academic and career futures
-                through international education opportunities across leading global
-                destinations.
+              <p className="mt-8 max-w-3xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg md:text-xl md:leading-9">
+                Explore how students transformed their academic and career
+                futures through international education opportunities across
+                leading global destinations.
               </p>
             </div>
           </Reveal>
@@ -119,7 +131,7 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* STORIES */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom">
           <Reveal>
             <div className="mb-14 max-w-4xl md:mb-20">
@@ -141,13 +153,13 @@ export default function SuccessStoriesPage() {
               >
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+                  className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-500 dark:border-white/10 dark:bg-white/[0.04]"
                 >
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#F5A623]/10 text-2xl font-bold text-[#B45309]">
                     {story.name.charAt(0)}
                   </div>
 
-                  <h3 className="text-2xl font-black text-[#111111]">
+                  <h3 className="text-2xl font-black text-[#07182B] dark:text-white">
                     {story.name}
                   </h3>
 
@@ -156,18 +168,18 @@ export default function SuccessStoriesPage() {
                   </p>
 
                   <div className="mt-6 space-y-3">
-                    <p className="text-black/70">
+                    <p className="text-black/70 dark:text-white/70">
                       <span className="font-bold">Course:</span>{" "}
                       {story.course}
                     </p>
 
-                    <p className="text-black/70">
+                    <p className="text-black/70 dark:text-white/70">
                       <span className="font-bold">University:</span>{" "}
                       {story.university}
                     </p>
                   </div>
 
-                  <p className="mt-6 leading-8 text-black/60">
+                  <p className="mt-6 leading-8 text-black/60 dark:text-white/60">
                     {story.text}
                   </p>
                 </motion.div>
@@ -177,16 +189,16 @@ export default function SuccessStoriesPage() {
         </div>
       </section>
 
-      {/* ROTATING TESTIMONIALS */}
-      <section className="relative overflow-hidden bg-[#F8F6F2] py-20 md:py-28">
-        <div className="mb-16 text-center px-5 md:px-6">
+      {/* TESTIMONIALS */}
+      <section className="relative overflow-hidden bg-[#F7F9FC] py-20 transition-colors duration-500 dark:bg-[#06121F] md:py-28">
+        <div className="mb-16 px-5 text-center md:px-6">
           <Reveal>
             <div>
               <p className="mb-4 text-xs uppercase tracking-[0.3em] text-[#B45309] sm:text-sm">
                 Testimonials
               </p>
 
-              <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#111111] sm:text-5xl md:text-6xl">
+              <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#07182B] dark:text-white sm:text-5xl md:text-6xl">
                 What students say about us.
               </h2>
             </div>
@@ -208,13 +220,13 @@ export default function SuccessStoriesPage() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.03 }}
-                className="group w-[340px] shrink-0 rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] transition duration-300 hover:shadow-[0_25px_100px_rgba(0,0,0,0.12)]"
+                className="group w-[340px] shrink-0 rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition duration-300 hover:shadow-[0_25px_100px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-white/[0.04]"
               >
                 <div className="mb-6 text-5xl text-[#F5A623]">
                   “
                 </div>
 
-                <p className="leading-8 text-black/70">
+                <p className="leading-8 text-black/70 dark:text-white/70">
                   {item.quote}
                 </p>
 
@@ -228,7 +240,7 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* RESULTS */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -243,13 +255,13 @@ export default function SuccessStoriesPage() {
               >
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="rounded-[2.5rem] border border-black/5 bg-white p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+                  className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-500 dark:border-white/10 dark:bg-white/[0.04]"
                 >
                   <h3 className="text-5xl font-black text-[#B45309]">
                     {value}
                   </h3>
 
-                  <p className="mt-4 text-sm uppercase tracking-[0.3em] text-black/45">
+                  <p className="mt-4 text-sm uppercase tracking-[0.3em] text-black/45 dark:text-white/45">
                     {label}
                   </p>
                 </motion.div>
@@ -265,44 +277,33 @@ export default function SuccessStoriesPage() {
           <Reveal>
             <motion.div
               whileHover={{ y: -4 }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-[#F5A623]/15 via-white/[0.03] to-[#7C3AED]/10 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.4)] backdrop-blur-3xl md:p-16"
+              className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-gradient-to-br from-[#F5A623]/10 via-white/80 to-cyan-100/70 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] backdrop-blur-3xl transition-all duration-500 dark:border-white/10 dark:from-[#F5A623]/15 dark:via-white/[0.03] dark:to-[#7C3AED]/10 dark:shadow-[0_25px_100px_rgba(0,0,0,0.4)] md:p-16"
             >
-              <div className="absolute inset-0 opacity-[0.04]">
-                <div
-                  className="h-full w-full"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle, white 1px, transparent 1px)",
-                    backgroundSize: "24px 24px",
-                  }}
-                />
-              </div>
-
               <div className="relative z-10 max-w-4xl">
                 <p className="mb-5 text-xs uppercase tracking-[0.3em] text-[#F5A623] sm:text-sm">
                   Your Journey Starts Here
                 </p>
 
-                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#07182B] dark:text-white sm:text-5xl md:text-6xl">
                   Become our next international success story.
                 </h2>
 
-                <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg">
                   Connect with our advisors and begin your journey toward
                   internationally recognized education and global opportunities.
                 </p>
 
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <Link
-  href="/contact"
+                    href="/contact"
                     className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
                   >
                     Book Free Consultation
-                 </Link>
+                  </Link>
 
                   <Link
                     href="/universities"
-                    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
+                    className="w-fit rounded-full border border-black/10 bg-white/70 px-8 py-4 font-semibold text-[#07182B] transition hover:bg-[#07182B] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
                   >
                     Explore Universities
                   </Link>
@@ -315,4 +316,3 @@ export default function SuccessStoriesPage() {
     </main>
   );
 }
-

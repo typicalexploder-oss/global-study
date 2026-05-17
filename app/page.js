@@ -7,7 +7,7 @@ import ContactCTA from "@/components/ContactCTA";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
       <Hero />
       <Countries />
       <WhyChooseUs />

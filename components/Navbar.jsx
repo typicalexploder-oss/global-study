@@ -1,64 +1,83 @@
 "use client";
 
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+
+const navLinks = [
+  ["Home", "/"],
+  ["About", "/about"],
+  ["Services", "/services"],
+  ["Courses", "/courses"],
+  ["Universities", "/universities"],
+  ["Success Stories", "/success-stories"],
+  ["Blog", "/blog"],
+  ["FAQ", "/faq"],
+  ["Contact", "/contact"],
+];
+
+const countries = [
+  {
+    slug: "romania",
+    name: "Romania",
+    type: "Study Abroad",
+  },
+  {
+    slug: "germany",
+    name: "Germany",
+    type: "Engineering & Tech",
+  },
+  {
+    slug: "singapore",
+    name: "Singapore",
+    type: "Global Innovation Hub",
+  },
+  {
+    slug: "india",
+    name: "India",
+    type: "Online Degrees",
+  },
+] ;
+
+const navItemClass =
+  "group relative whitespace-nowrap text-sm font-medium text-black/70 transition hover:text-black dark:text-white/75 dark:hover:text-white";
+
+const underlineClass =
+  "absolute -bottom-2 left-0 h-[2px] w-0 bg-gradient-to-r from-[#F5A623] to-cyan-400 transition-all duration-300 group-hover:w-full";
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
-const [scrolled, setScrolled] = useState(false);
-const [mobileOpen, setMobileOpen] = useState(false);
-const [countryOpen, setCountryOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [countryOpen, setCountryOpen] = useState(false);
 
+  const isDark = resolvedTheme === "dark";
 
+  useEffect(() => {
+    setMounted(true);
 
-useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 40);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
   };
 
-  window.addEventListener("scroll", handleScroll);
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-  const navLinks = [
-    ["Home", "/"],
-    ["About", "/about"],
-    ["Services", "/services"],
-    ["Courses", "/courses"],
-    ["Universities", "/universities"],
-    ["Success Stories", "/success-stories"],
-    ["Blog", "/blog"],
-    ["FAQ", "/faq"],
-    ["Contact", "/contact"],
-  ];
-
-  const countries = [
-    {
-      slug: "romania",
-      name: "Romania",
-      type: "Study Abroad",
-    },
-    {
-      slug: "germany",
-      name: "Germany",
-      type: "Engineering & Tech",
-    },
-    {
-      slug: "singapore",
-      name: "Singapore",
-      type: "Global Innovation Hub",
-    },
-    {
-      slug: "india",
-      name: "India",
-      type: "Online Degrees",
-    },
-  ];
+  const toggleTheme = () => {
+    setTheme(isDark ? "light" : "dark");
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full px-3 pt-3 sm:px-4 sm:pt-4">
@@ -66,20 +85,24 @@ useEffect(() => {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7 }}
-      className={`relative mx-auto flex max-w-7xl items-center justify-between overflow-hidden rounded-full border px-4 sm:px-6 transition-all duration-500 ${
-  scrolled
-    ? "border-black/10 dark:border-white/15 bg-white/95 dark:bg-[#07182B]/85 py-3 shadow-[0_10px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_10px_50px_rgba(0,0,0,0.45)] backdrop-blur-3xl"
-    : "border-black/10 dark:border-white/5 bg-white/90 dark:bg-[#07182B]/60 py-4 backdrop-blur-2xl"
-}`}
+        aria-label="Main navigation"
+        className={`relative mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 overflow-visible rounded-full border px-4 py-3 transition-all duration-500 sm:px-6 ${
+          scrolled
+            ? "border-black/10 bg-white/95 shadow-[0_10px_50px_rgba(0,0,0,0.12)] backdrop-blur-3xl dark:border-white/15 dark:bg-[#07182B]/85 dark:shadow-[0_10px_50px_rgba(0,0,0,0.45)]"
+            : "border-black/10 bg-white/90 backdrop-blur-2xl dark:border-white/5 dark:bg-[#07182B]/60"
+        }`}
       >
-        {/* Glow */}
-        <div className="absolute inset-0 opacity-40">
+        {/* Decorative glow */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-40">
           <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-cyan-500/10 blur-3xl" />
           <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-purple-500/10 blur-3xl" />
         </div>
 
-        {/* Texture */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
+        {/* Decorative texture */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-[0.03]"
+        >
           <div
             className="h-full w-full"
             style={{
@@ -90,17 +113,19 @@ useEffect(() => {
           />
         </div>
 
-        {/* LOGO */}
+        {/* Logo */}
         <Link
           href="/"
-          className="relative z-10 flex items-center gap-3"
+          aria-label="Global Study Abroad Consultants home"
+          className="relative z-10 flex shrink-0 items-center gap-3"
+          onClick={closeMobileMenu}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 dark:border-white/20 bg-black/5 dark:bg-white/10 text-base font-black text-black dark:text-white backdrop-blur-xl sm:h-11 sm:w-11 sm:text-lg">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-black/5 text-base font-black text-black backdrop-blur-xl dark:border-white/20 dark:bg-white/10 dark:text-white sm:h-11 sm:w-11 sm:text-lg">
             GS
           </div>
 
           <div>
-            <h2 className="text-[10px] font-black uppercase tracking-[0.28em] text-black dark:text-white sm:text-sm sm:tracking-[0.35em]">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.22em] text-black dark:text-white sm:text-sm sm:tracking-[0.3em]">
               Global Study
             </h2>
 
@@ -110,45 +135,48 @@ useEffect(() => {
           </div>
         </Link>
 
-        {/* DESKTOP MENU */}
-        <div className="relative z-10 hidden items-center lg:flex lg:gap-4 xl:gap-7">
+        {/* Desktop menu */}
+        <div className="relative z-10 hidden items-center gap-5 lg:flex xl:gap-7">
           {navLinks.map(([label, href]) => (
-            <Link
-              key={label}
-              href={href}
-              className="group relative whitespace-nowrap text-sm font-medium text-black/70 transition hover:text-black dark:text-white/75 dark:hover:text-white"
-            >
+            <Link key={label} href={href} className={navItemClass}>
               {label}
-
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-gradient-to-r from-[#F5A623] to-cyan-400 transition-all duration-300 group-hover:w-full" />
+              <span className={underlineClass} />
             </Link>
           ))}
 
-          {/* DESTINATIONS */}
+          {/* Destinations dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setCountryOpen(true)}
             onMouseLeave={() => setCountryOpen(false)}
           >
-            <button className="group relative whitespace-nowrap text-sm font-medium text-black/70 transition hover:text-black dark:text-white/75 dark:hover:text-white">
+            <button
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={countryOpen}
+              onClick={() => setCountryOpen((open) => !open)}
+              className={navItemClass}
+            >
               Destinations
-
-              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-gradient-to-r from-[#F5A623] to-cyan-400 transition-all duration-300 group-hover:w-full" />
+              <span className={underlineClass} />
             </button>
 
             <AnimatePresence>
               {countryOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  role="menu"
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.25 }}
-                  className="absolute right-0 top-12 w-80 overflow-hidden rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/95 dark:bg-[#07182B]/95 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-3xl"
+                  exit={{ opacity: 0, y: 16 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 top-12 w-80 overflow-hidden rounded-[2rem] border border-black/10 bg-white/95 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.15)] backdrop-blur-3xl dark:border-white/10 dark:bg-[#07182B]/95 dark:shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
                 >
                   {countries.map((country) => (
                     <Link
+                      role="menuitem"
                       key={country.slug}
                       href={`/countries/${country.slug}`}
+                      onClick={() => setCountryOpen(false)}
                       className="group flex items-center justify-between rounded-2xl px-5 py-4 transition hover:bg-black/5 dark:hover:bg-white/5"
                     >
                       <div>
@@ -172,58 +200,59 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* RIGHT ACTIONS */}
-       <div className="relative z-10 flex items-center gap-3">
-  {/* THEME TOGGLE */}
-<button
-  onClick={() =>
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
-  className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-black dark:text-white backdrop-blur-xl transition hover:scale-105 lg:flex"
->
-  {theme === "dark" ? (
-    <Moon size={18} />
-  ) : (
-    <Sun size={18} />
-  )}
-</button>
-
-          {/* APPLY BUTTON */}
-          <div className="hidden xl:block">
-            <Link
-              href="/apply"
-              className="rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-5 py-3 text-sm font-semibold text-[#06121F] shadow-[0_0_35px_rgba(245,166,35,0.25)] transition-all duration-300 hover:scale-105 xl:px-7 xl:text-base"
+        {/* Right actions */}
+        <div className="relative z-10 flex shrink-0 items-center gap-3">
+          {/* Theme toggle */}
+          {mounted && (
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/5 dark:text-white lg:flex"
             >
-              Apply Now
-            </Link>
-          </div>
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          )}
 
-          {/* MOBILE BUTTON */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-black dark:text-white backdrop-blur-xl lg:hidden"
+          {/* Apply button */}
+          <Link
+            href="/apply"
+            className="hidden shrink-0 rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-5 py-3 text-sm font-semibold text-[#06121F] shadow-[0_0_35px_rgba(245,166,35,0.25)] transition-all duration-300 hover:scale-105 xl:block xl:px-7 xl:text-base"
           >
-            {mobileOpen ? "✕" : "☰"}
+            Apply Now
+          </Link>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-white lg:hidden"
+          >
+            <span aria-hidden="true">{mobileOpen ? "✕" : "☰"}</span>
           </button>
         </div>
       </motion.nav>
 
-      {/* MOBILE MENU */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -24 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.3 }}
-            className="mx-auto mt-4 max-h-[85vh] max-w-7xl overflow-y-auto rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/95 dark:bg-[#07182B]/95 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur-3xl lg:hidden"
+            exit={{ opacity: 0, y: -24 }}
+            transition={{ duration: 0.25 }}
+            className="mx-auto mt-4 max-h-[85vh] max-w-7xl overflow-y-auto rounded-[2rem] border border-black/10 bg-white/95 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.15)] backdrop-blur-3xl dark:border-white/10 dark:bg-[#07182B]/95 dark:shadow-[0_8px_40px_rgba(0,0,0,0.35)] lg:hidden"
           >
             <div className="flex flex-col gap-5">
               {navLinks.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeMobileMenu}
                   className="text-lg text-black/80 transition hover:text-black dark:text-white/80 dark:hover:text-white"
                 >
                   {label}
@@ -240,10 +269,13 @@ useEffect(() => {
                     <Link
                       key={country.slug}
                       href={`/countries/${country.slug}`}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={closeMobileMenu}
                       className="rounded-2xl bg-black/5 px-4 py-4 text-black/80 transition hover:bg-black/10 dark:bg-white/5 dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-white"
                     >
-                      {country.name}
+                      <span className="font-medium">{country.name}</span>
+                      <span className="mt-1 block text-sm text-black/45 dark:text-white/40">
+                        {country.type}
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -251,7 +283,7 @@ useEffect(() => {
 
               <Link
                 href="/apply"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className="mt-4 rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-6 py-3 text-center font-semibold text-[#06121F]"
               >
                 Apply Now

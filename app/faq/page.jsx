@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -90,25 +91,37 @@ const faqs = [
       "Typically documents include academic transcripts, passport copies, SOP, LORs, English proficiency scores, and other course-specific requirements.",
   },
 ];
+
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <main className="relative overflow-hidden bg-[#0B0B0B] text-white">
-      {/* GLOWS */}
-      <div className="absolute left-0 top-20 h-[400px] w-[400px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
 
-      <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-0 top-20 h-[400px] w-[400px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+
+        <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+
+        <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -130,7 +143,7 @@ export default function FAQPage() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-3xl text-base leading-8 text-white/65 sm:text-lg md:text-xl md:leading-9">
+              <p className="mt-8 max-w-3xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg md:text-xl md:leading-9">
                 Explore answers to common questions about admissions, visas,
                 scholarships, universities, accommodation, and studying abroad.
               </p>
@@ -140,7 +153,7 @@ export default function FAQPage() {
       </section>
 
       {/* CATEGORIES */}
-      <section className="relative bg-[#F8F6F2] px-5 py-14 text-[#111111] md:px-6 md:py-20">
+      <section className="relative bg-[#F7F9FC] px-5 py-14 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-20">
         <div className="container-custom">
           <div className="flex flex-wrap gap-4">
             {faqCategories.map((category, index) => (
@@ -150,7 +163,7 @@ export default function FAQPage() {
               >
                 <motion.button
                   whileHover={{ y: -3 }}
-                  className="rounded-full border border-black/5 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#B45309] shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+                  className="rounded-full border border-black/10 bg-white/85 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#B45309] shadow-[0_10px_40px_rgba(0,0,0,0.06)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04]"
                 >
                   {category}
                 </motion.button>
@@ -161,7 +174,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom max-w-5xl">
           <Reveal>
             <div className="mb-14">
@@ -183,7 +196,7 @@ export default function FAQPage() {
               >
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className="overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+                  className="overflow-hidden rounded-[2rem] border border-black/10 bg-white/85 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04]"
                 >
                   <button
                     onClick={() =>
@@ -191,7 +204,7 @@ export default function FAQPage() {
                     }
                     className="flex w-full items-center justify-between gap-6 px-8 py-7 text-left"
                   >
-                    <h3 className="text-xl font-black text-[#111111]">
+                    <h3 className="text-xl font-black text-[#07182B] dark:text-white">
                       {faq.question}
                     </h3>
 
@@ -209,7 +222,7 @@ export default function FAQPage() {
                         transition={{ duration: 0.3 }}
                       >
                         <div className="px-8 pb-8">
-                          <p className="leading-8 text-black/60">
+                          <p className="leading-8 text-black/60 dark:text-white/60">
                             {faq.answer}
                           </p>
                         </div>
@@ -224,7 +237,7 @@ export default function FAQPage() {
       </section>
 
       {/* SUPPORT SECTION */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom grid gap-12 lg:grid-cols-2 lg:items-center md:gap-20">
           <Reveal>
             <div>
@@ -236,7 +249,7 @@ export default function FAQPage() {
                 Personalized guidance for every student.
               </h2>
 
-              <p className="mt-8 text-base leading-8 text-black/60 sm:text-lg">
+              <p className="mt-8 text-base leading-8 text-black/60 dark:text-white/60 sm:text-lg">
                 Our advisors support students through course selection,
                 applications, scholarships, visas, accommodation, and
                 pre-departure preparation.
@@ -257,7 +270,7 @@ export default function FAQPage() {
                       ✓
                     </div>
 
-                    <p className="text-lg text-black/70">
+                    <p className="text-lg text-black/70 dark:text-white/70">
                       {item}
                     </p>
                   </div>
@@ -269,32 +282,32 @@ export default function FAQPage() {
           <Reveal delay={0.15}>
             <motion.div
               whileHover={{ y: -4 }}
-              className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] md:p-10"
+              className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] md:p-10"
             >
-              <h3 className="text-3xl font-black text-[#111111]">
+              <h3 className="text-3xl font-black text-[#07182B] dark:text-white">
                 Need personalized guidance?
               </h3>
 
-              <p className="mt-5 leading-8 text-black/60">
+              <p className="mt-5 leading-8 text-black/60 dark:text-white/60">
                 Speak directly with our expert education advisors and receive
                 personalized recommendations tailored to your academic goals.
               </p>
 
               <div className="mt-10 flex flex-col gap-4">
-  <Link
-    href="/contact"
-    className="rounded-full bg-[#F5A623] px-8 py-4 text-center font-bold text-[#111111] transition hover:bg-[#FFD27A]"
-  >
-    Contact Our Team
-  </Link>
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-[#F5A623] px-8 py-4 text-center font-bold text-[#111111] transition hover:bg-[#FFD27A]"
+                >
+                  Contact Our Team
+                </Link>
 
-  <Link
-    href="/services"
-    className="rounded-full border border-black/10 bg-[#F8F6F2] px-8 py-4 text-center font-semibold text-[#111111] transition hover:bg-[#111111] hover:text-white"
-  >
-    Explore Services
-  </Link>
-</div>
+                <Link
+                  href="/services"
+                  className="rounded-full border border-black/10 bg-[#F8F6F2] px-8 py-4 text-center font-semibold text-[#111111] transition hover:bg-[#111111] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
+                >
+                  Explore Services
+                </Link>
+              </div>
             </motion.div>
           </Reveal>
         </div>
@@ -306,14 +319,14 @@ export default function FAQPage() {
           <Reveal>
             <motion.div
               whileHover={{ y: -4 }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-[#F5A623]/15 via-white/[0.03] to-[#7C3AED]/10 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.4)] backdrop-blur-3xl md:p-16"
+              className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-gradient-to-br from-[#F5A623]/10 via-white/80 to-cyan-100/70 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] backdrop-blur-3xl transition-all duration-500 dark:border-white/10 dark:from-[#F5A623]/15 dark:via-white/[0.03] dark:to-[#7C3AED]/10 dark:shadow-[0_25px_100px_rgba(0,0,0,0.4)] md:p-16"
             >
               <div className="absolute inset-0 opacity-[0.04]">
                 <div
                   className="h-full w-full"
                   style={{
                     backgroundImage:
-                      "radial-gradient(circle, white 1px, transparent 1px)",
+                      "radial-gradient(circle, currentColor 1px, transparent 1px)",
                     backgroundSize: "24px 24px",
                   }}
                 />
@@ -324,30 +337,30 @@ export default function FAQPage() {
                   Still Have Questions?
                 </p>
 
-                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#07182B] dark:text-white sm:text-5xl md:text-6xl">
                   Let’s help you plan your future abroad.
                 </h2>
 
-                <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg">
                   Connect with our expert advisors and receive personalized
                   support for your global education journey.
                 </p>
 
- <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-  <Link
-    href="/contact"
-    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
-  >
-    Contact Us
-  </Link>
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <Link
+                    href="/contact"
+                    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
+                  >
+                    Contact Us
+                  </Link>
 
-  <Link
-    href="/courses"
-    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
-  >
-    Explore Courses
-  </Link>
-</div>
+                  <Link
+                    href="/courses"
+                    className="w-fit rounded-full border border-black/10 bg-white/70 px-8 py-4 font-semibold text-[#07182B] transition hover:bg-[#07182B] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
+                  >
+                    Explore Courses
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </Reveal>

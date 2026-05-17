@@ -6,19 +6,30 @@ import Reveal from "@/components/Reveal";
 
 export default function SuccessPage() {
   return (
-    <main className="relative overflow-hidden bg-[#070707] text-white">
-      {/* GLOWS */}
-      <div className="absolute left-[-120px] top-20 h-[420px] w-[420px] rounded-full bg-[#7C3AED]/20 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-[-120px] top-40 h-[420px] w-[420px] rounded-full bg-[#F5A623]/20 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
+
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-[-120px] top-20 h-[420px] w-[420px] rounded-full bg-[#7C3AED]/20 blur-3xl" />
+
+        <div className="absolute right-[-120px] top-40 h-[420px] w-[420px] rounded-full bg-[#F5A623]/20 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -32,7 +43,7 @@ export default function SuccessPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.05] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur-3xl md:p-16"
+              className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-white/85 p-8 shadow-[0_30px_120px_rgba(0,0,0,0.12)] backdrop-blur-3xl dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[0_30px_120px_rgba(0,0,0,0.45)] md:p-16"
             >
               {/* INNER GLOW */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent" />
@@ -48,7 +59,7 @@ export default function SuccessPage() {
                     damping: 10,
                     delay: 0.2,
                   }}
-                  className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-[#F5A623] to-[#FFD27A] text-5xl shadow-[0_15px_60px_rgba(245,166,35,0.35)]"
+                  className="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-[#F5A623] to-[#FFD27A] text-5xl text-[#111111] shadow-[0_15px_60px_rgba(245,166,35,0.35)]"
                 >
                   ✓
                 </motion.div>
@@ -58,14 +69,14 @@ export default function SuccessPage() {
                   Application Submitted
                 </p>
 
-                <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-7xl">
+                <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#07182B] dark:text-white sm:text-5xl md:text-7xl">
                   Your application has
                   <span className="block bg-gradient-to-r from-[#F5A623] via-[#FFD27A] to-[#FFF3C4] bg-clip-text text-transparent">
                     been successfully received.
                   </span>
                 </h1>
 
-                <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-white/60 sm:text-lg md:text-xl md:leading-9">
+                <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-black/60 dark:text-white/60 sm:text-lg md:text-xl md:leading-9">
                   Our international education advisors will review your details
                   and contact you shortly regarding admissions, scholarships,
                   visa guidance, and university opportunities.
@@ -96,17 +107,17 @@ export default function SuccessPage() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + index * 0.12 }}
                       whileHover={{ y: -4 }}
-                      className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 text-left shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
+                      className="rounded-[2rem] border border-black/10 bg-white/85 p-8 text-left shadow-[0_20px_80px_rgba(0,0,0,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
                     >
                       <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5A623]/10 text-lg font-black text-[#F5A623]">
                         {item.step}
                       </div>
 
-                      <h3 className="text-2xl font-black">
+                      <h3 className="text-2xl font-black text-[#07182B] dark:text-white">
                         {item.title}
                       </h3>
 
-                      <p className="mt-5 leading-8 text-white/60">
+                      <p className="mt-5 leading-8 text-black/60 dark:text-white/60">
                         {item.text}
                       </p>
                     </motion.div>
@@ -117,7 +128,7 @@ export default function SuccessPage() {
                 <div className="mt-16 flex flex-col items-center justify-center gap-5 sm:flex-row">
                   <Link
                     href="/"
-                    className="rounded-full border border-white/10 bg-white/[0.05] px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white hover:text-[#111111]"
+                    className="rounded-full border border-black/10 bg-white/70 px-8 py-4 font-semibold text-[#07182B] transition duration-300 hover:bg-[#07182B] hover:text-white dark:border-white/10 dark:bg-white/[0.05] dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
                   >
                     Return Home
                   </Link>

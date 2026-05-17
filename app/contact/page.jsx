@@ -1,8 +1,8 @@
 "use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
-
 
 const contactCards = [
   {
@@ -27,21 +27,32 @@ const contactCards = [
 
 export default function ContactPage() {
   return (
-    <main className="relative overflow-hidden bg-[#0B0B0B] text-white">
-      {/* GLOWS */}
-      <div className="absolute left-0 top-20 h-[400px] w-[400px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
 
-      <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-0 top-20 h-[400px] w-[400px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+
+        <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+
+        <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -63,7 +74,7 @@ export default function ContactPage() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-3xl text-base leading-8 text-white/65 sm:text-lg md:text-xl md:leading-9">
+              <p className="mt-8 max-w-3xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg md:text-xl md:leading-9">
                 Connect with our international education experts and receive
                 personalized guidance for courses, universities, scholarships,
                 visas, and student life abroad.
@@ -74,7 +85,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT CARDS */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom">
           <div className="grid gap-6 md:grid-cols-3">
             {contactCards.map((card, index) => (
@@ -84,17 +95,17 @@ export default function ContactPage() {
               >
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+                  className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-white/[0.04]"
                 >
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F5A623]/10 text-3xl">
                     {card.icon}
                   </div>
 
-                  <h3 className="text-2xl font-black text-[#111111]">
+                  <h3 className="text-2xl font-black text-[#07182B] dark:text-white">
                     {card.title}
                   </h3>
 
-                  <p className="mt-4 leading-8 text-black/60">
+                  <p className="mt-4 leading-8 text-black/60 dark:text-white/60">
                     {card.text}
                   </p>
 
@@ -109,7 +120,7 @@ export default function ContactPage() {
       </section>
 
       {/* FORM SECTION */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom grid gap-12 lg:grid-cols-2 lg:items-start md:gap-20">
           {/* LEFT */}
           <Reveal>
@@ -122,7 +133,7 @@ export default function ContactPage() {
                 Speak with our global education experts.
               </h2>
 
-              <p className="mt-8 text-base leading-8 text-black/60 sm:text-lg">
+              <p className="mt-8 text-base leading-8 text-black/60 dark:text-white/60 sm:text-lg">
                 Whether you are exploring study destinations, choosing a course,
                 or preparing your application, our team is here to guide you at
                 every step.
@@ -143,7 +154,7 @@ export default function ContactPage() {
                       ✓
                     </div>
 
-                    <p className="text-lg text-black/70">
+                    <p className="text-lg text-black/70 dark:text-white/70">
                       {item}
                     </p>
                   </div>
@@ -156,39 +167,39 @@ export default function ContactPage() {
           <Reveal delay={0.15}>
             <motion.div
               whileHover={{ y: -4 }}
-              className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] md:p-10"
+              className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] md:p-10"
             >
               <form className="space-y-6">
                 <div>
-                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50">
+                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                     Full Name
                   </label>
 
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="w-full rounded-2xl border border-black/10 bg-[#F8F6F2] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623]"
+                    className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.03] dark:text-white"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50">
+                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                     Email Address
                   </label>
 
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full rounded-2xl border border-black/10 bg-[#F8F6F2] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623]"
+                    className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.03] dark:text-white"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50">
+                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                     Preferred Destination
                   </label>
 
-                  <select className="w-full rounded-2xl border border-black/10 bg-[#F8F6F2] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623]">
+                  <select className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.03] dark:text-white">
                     <option>Choose destination</option>
                     <option>Germany</option>
                     <option>Romania</option>
@@ -199,14 +210,14 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50">
+                  <label className="mb-3 block text-sm font-semibold uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                     Message
                   </label>
 
                   <textarea
                     rows="5"
                     placeholder="Tell us about your goals..."
-                    className="w-full rounded-2xl border border-black/10 bg-[#F8F6F2] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623]"
+                    className="w-full rounded-2xl border border-black/10 bg-[#F7F9FC] px-5 py-4 text-[#111111] outline-none transition focus:border-[#F5A623] dark:border-white/10 dark:bg-white/[0.03] dark:text-white"
                   />
                 </div>
 
@@ -223,7 +234,7 @@ export default function ContactPage() {
       </section>
 
       {/* GLOBAL REACH */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom">
           <Reveal>
             <div className="mb-14 max-w-4xl md:mb-20">
@@ -246,13 +257,13 @@ export default function ContactPage() {
                 >
                   <motion.div
                     whileHover={{ y: -6 }}
-                    className="rounded-[2rem] border border-black/5 bg-white p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+                    className="rounded-[2rem] border border-black/10 bg-white/85 p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-white/[0.04]"
                   >
-                    <h3 className="text-2xl font-black text-[#111111]">
+                    <h3 className="text-2xl font-black text-[#07182B] dark:text-white">
                       {country}
                     </h3>
 
-                    <p className="mt-4 text-black/60">
+                    <p className="mt-4 text-black/60 dark:text-white/60">
                       Universities, scholarships, and student support services.
                     </p>
                   </motion.div>
@@ -264,7 +275,7 @@ export default function ContactPage() {
       </section>
 
       {/* MINI FAQ */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom max-w-5xl">
           <Reveal>
             <div className="mb-14 text-center">
@@ -299,13 +310,13 @@ export default function ContactPage() {
               >
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)]"
+                  className="rounded-[2rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-white/[0.04]"
                 >
-                  <h3 className="text-2xl font-black text-[#111111]">
+                  <h3 className="text-2xl font-black text-[#07182B] dark:text-white">
                     {faq.q}
                   </h3>
 
-                  <p className="mt-4 leading-8 text-black/60">
+                  <p className="mt-4 leading-8 text-black/60 dark:text-white/60">
                     {faq.a}
                   </p>
                 </motion.div>
@@ -321,14 +332,14 @@ export default function ContactPage() {
           <Reveal>
             <motion.div
               whileHover={{ y: -4 }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-[#F5A623]/15 via-white/[0.03] to-[#7C3AED]/10 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.4)] backdrop-blur-3xl md:p-16"
+              className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-gradient-to-br from-[#F5A623]/10 via-white/80 to-cyan-100/70 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] backdrop-blur-3xl transition-all duration-500 dark:border-white/10 dark:from-[#F5A623]/15 dark:via-white/[0.03] dark:to-[#7C3AED]/10 dark:shadow-[0_25px_100px_rgba(0,0,0,0.4)] md:p-16"
             >
               <div className="absolute inset-0 opacity-[0.04]">
                 <div
                   className="h-full w-full"
                   style={{
                     backgroundImage:
-                      "radial-gradient(circle, white 1px, transparent 1px)",
+                      "radial-gradient(circle, currentColor 1px, transparent 1px)",
                     backgroundSize: "24px 24px",
                   }}
                 />
@@ -339,30 +350,30 @@ export default function ContactPage() {
                   Ready to Begin?
                 </p>
 
-                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#07182B] dark:text-white sm:text-5xl md:text-6xl">
                   Your future abroad starts with one conversation.
                 </h2>
 
-                <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg">
                   Speak with our expert advisors and take the first step toward
                   your international education journey.
                 </p>
 
-               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-  <Link
-    href="/services"
-    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
-  >
-    Explore Services
-  </Link>
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <Link
+                    href="/services"
+                    className="w-fit rounded-full bg-[#F5A623] px-8 py-4 font-bold text-[#111111] transition hover:bg-[#FFD27A]"
+                  >
+                    Explore Services
+                  </Link>
 
-  <Link
-    href="/universities"
-    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
-  >
-    View Universities
-  </Link>
-</div>
+                  <Link
+                    href="/universities"
+                    className="w-fit rounded-full border border-black/10 bg-white/70 px-8 py-4 font-semibold text-[#07182B] transition hover:bg-[#07182B] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
+                  >
+                    View Universities
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </Reveal>

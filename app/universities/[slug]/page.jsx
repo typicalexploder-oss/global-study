@@ -97,154 +97,130 @@ const universities = {
     ],
   },
 
-"jain-online": {
-  name: "JAIN Online",
-  country: "India",
-  ranking: "Top Online University in India",
-  image:
-    "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800&auto=format&fit=crop",
-  tuition: "₹40,000 - ₹150,000 / year",
-  duration: "2 - 3 Years",
-  intake: "January, April & September",
-  eligibility:
-    "12th pass or bachelor degree depending on the program.",
-  scholarships:
-    "Merit scholarships and flexible EMI payment options available.",
-  programs: [
-    "MBA",
-    "BBA",
-    "BCA",
-    "MCA",
-  ],
-  campus:
-    "Flexible online learning platform with AI-enabled education and global access.",
-  careers:
-    "Business Management, IT, Marketing, HR, Data Analytics, and Entrepreneurship.",
-  reviews: [
-    "Excellent flexibility for working professionals.",
-    "Industry-oriented curriculum and modern LMS.",
-    "Recognized online degrees with career support.",
-  ],
-},
+  "jain-online": {
+    name: "JAIN Online",
+    country: "India",
+    ranking: "Top Online University in India",
+    image:
+      "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800&auto=format&fit=crop",
+    tuition: "₹40,000 - ₹150,000 / year",
+    duration: "2 - 3 Years",
+    intake: "January, April & September",
+    eligibility:
+      "12th pass or bachelor degree depending on the program.",
+    scholarships:
+      "Merit scholarships and flexible EMI payment options available.",
+    programs: ["MBA", "BBA", "BCA", "MCA"],
+    campus:
+      "Flexible online learning platform with AI-enabled education and global access.",
+    careers:
+      "Business Management, IT, Marketing, HR, Data Analytics, and Entrepreneurship.",
+    reviews: [
+      "Excellent flexibility for working professionals.",
+      "Industry-oriented curriculum and modern LMS.",
+      "Recognized online degrees with career support.",
+    ],
+  },
 
-"yenepoya-online": {
-  name: "Yenepoya Online",
-  country: "India",
-  ranking: "Leading Flexible Online Learning University",
-  image:
-    "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800&auto=format&fit=crop",
-  tuition: "₹35,000 - ₹120,000 / year",
-  duration: "2 - 3 Years",
-  intake: "January & July",
-  eligibility:
-    "Academic transcripts and basic eligibility depending on program.",
-  scholarships:
-    "Special scholarships and affordable payment options available.",
-  programs: [
-    "MBA",
-    "BCom",
-    "BCA",
-    "MCA",
-  ],
-  campus:
-    "Modern online education ecosystem with flexible digital classrooms.",
-  careers:
-    "IT, Finance, Marketing, Healthcare Administration, and Management.",
-  reviews: [
-    "Affordable and flexible online education.",
-    "Supportive faculty and simple admission process.",
-    "Great option for distance learners.",
-  ],
-},
+  "yenepoya-online": {
+    name: "Yenepoya Online",
+    country: "India",
+    ranking: "Leading Flexible Online Learning University",
+    image:
+      "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800&auto=format&fit=crop",
+    tuition: "₹35,000 - ₹120,000 / year",
+    duration: "2 - 3 Years",
+    intake: "January & July",
+    eligibility:
+      "Academic transcripts and basic eligibility depending on program.",
+    scholarships:
+      "Special scholarships and affordable payment options available.",
+    programs: ["MBA", "BCom", "BCA", "MCA"],
+    campus:
+      "Modern online education ecosystem with flexible digital classrooms.",
+    careers:
+      "IT, Finance, Marketing, Healthcare Administration, and Management.",
+    reviews: [
+      "Affordable and flexible online education.",
+      "Supportive faculty and simple admission process.",
+      "Great option for distance learners.",
+    ],
+  },
 
-"heidelberg-university": {
-  name: "Heidelberg University",
-  country: "Germany",
-  ranking: "Historic Global Institution",
-  image:
-    "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1800&auto=format&fit=crop",
-  tuition: "€1,500 - €5,000 / year",
-  duration: "3 - 5 Years",
-  intake: "October & April",
-  eligibility:
-    "Academic transcripts, English/German proficiency, and SOP.",
-  scholarships:
-    "DAAD scholarships and international research grants available.",
-  programs: [
-    "Medicine",
-    "Research",
-    "Biotech",
-  ],
-  campus:
-    "Historic campus with advanced research and international exposure.",
-  careers:
-    "Research, Biotechnology, Healthcare, and Academic Leadership.",
-  reviews: [
-    "Prestigious and historic university.",
-    "Strong research opportunities.",
-    "Excellent international reputation.",
-  ],
-},
+  "heidelberg-university": {
+    name: "Heidelberg University",
+    country: "Germany",
+    ranking: "Historic Global Institution",
+    image:
+      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1800&auto=format&fit=crop",
+    tuition: "€1,500 - €5,000 / year",
+    duration: "3 - 5 Years",
+    intake: "October & April",
+    eligibility:
+      "Academic transcripts, English/German proficiency, and SOP.",
+    scholarships:
+      "DAAD scholarships and international research grants available.",
+    programs: ["Medicine", "Research", "Biotech"],
+    campus:
+      "Historic campus with advanced research and international exposure.",
+    careers:
+      "Research, Biotechnology, Healthcare, and Academic Leadership.",
+    reviews: [
+      "Prestigious and historic university.",
+      "Strong research opportunities.",
+      "Excellent international reputation.",
+    ],
+  },
 
-"chulalongkorn-university": {
-  name: "Chulalongkorn University",
-  country: "Thailand",
-  ranking: "Top University in Thailand",
-  image:
-    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1800&auto=format&fit=crop",
-  tuition: "$3,000 - $10,000 / year",
-  duration: "3 - 4 Years",
-  intake: "January & August",
-  eligibility:
-    "Academic transcripts and English proficiency.",
-  scholarships:
-    "Selected international student scholarships available.",
-  programs: [
-    "Business",
-    "Hospitality",
-    "IT",
-  ],
-  campus:
-    "Modern campus with international student opportunities.",
-  careers:
-    "Business, Tourism, Hospitality, and IT.",
-  reviews: [
-    "Affordable international education.",
-    "Friendly student environment.",
-    "Strong Asian university reputation.",
-  ],
-},
+  "chulalongkorn-university": {
+    name: "Chulalongkorn University",
+    country: "Thailand",
+    ranking: "Top University in Thailand",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1800&auto=format&fit=crop",
+    tuition: "$3,000 - $10,000 / year",
+    duration: "3 - 4 Years",
+    intake: "January & August",
+    eligibility:
+      "Academic transcripts and English proficiency.",
+    scholarships:
+      "Selected international student scholarships available.",
+    programs: ["Business", "Hospitality", "IT"],
+    campus:
+      "Modern campus with international student opportunities.",
+    careers:
+      "Business, Tourism, Hospitality, and IT.",
+    reviews: [
+      "Affordable international education.",
+      "Friendly student environment.",
+      "Strong Asian university reputation.",
+    ],
+  },
 
-"tsinghua-university": {
-  name: "Tsinghua University",
-  country: "China",
-  ranking: "World Leading Innovation Hub",
-  image:
-    "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=1800&auto=format&fit=crop",
-  tuition: "$4,000 - $12,000 / year",
-  duration: "4 Years",
-  intake: "March & September",
-  eligibility:
-    "Strong academic background and English proficiency.",
-  scholarships:
-    "Chinese Government Scholarships available.",
-  programs: [
-    "AI",
-    "Engineering",
-    "Technology",
-  ],
-  campus:
-    "Advanced innovation labs and world-class technology ecosystem.",
-  careers:
-    "Engineering, AI, Robotics, and Research.",
-  reviews: [
-    "One of Asia’s best universities.",
-    "Excellent AI and engineering programs.",
-    "Strong global recognition.",
-  ],
-},
-
-
+  "tsinghua-university": {
+    name: "Tsinghua University",
+    country: "China",
+    ranking: "World Leading Innovation Hub",
+    image:
+      "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=1800&auto=format&fit=crop",
+    tuition: "$4,000 - $12,000 / year",
+    duration: "4 Years",
+    intake: "March & September",
+    eligibility:
+      "Strong academic background and English proficiency.",
+    scholarships:
+      "Chinese Government Scholarships available.",
+    programs: ["AI", "Engineering", "Technology"],
+    campus:
+      "Advanced innovation labs and world-class technology ecosystem.",
+    careers:
+      "Engineering, AI, Robotics, and Research.",
+    reviews: [
+      "One of Asia’s best universities.",
+      "Excellent AI and engineering programs.",
+      "Strong global recognition.",
+    ],
+  },
 };
 
 export default function UniversityPage({ params }) {
@@ -256,19 +232,30 @@ export default function UniversityPage({ params }) {
   }
 
   return (
-    <main className="relative overflow-hidden bg-[#0B0B0B] text-white">
-      {/* GLOWS */}
-      <div className="absolute left-0 top-40 h-[350px] w-[350px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+    <main className="relative overflow-hidden bg-[#F7F9FC] text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white">
+      {/* LIGHT GLOWS */}
+      <div className="absolute inset-0 dark:hidden">
+        <div className="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[#F5A623]/18 blur-[120px]" />
 
-      <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-40 h-[420px] w-[420px] rounded-full bg-cyan-400/14 blur-[130px]" />
+
+        <div className="absolute bottom-[-10%] left-1/3 h-[340px] w-[340px] rounded-full bg-purple-400/12 blur-[120px]" />
+      </div>
+
+      {/* DARK GLOWS */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute left-0 top-40 h-[350px] w-[350px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+
+        <div className="absolute right-0 top-40 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      </div>
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.04]">
+      <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -281,7 +268,7 @@ export default function UniversityPage({ params }) {
           <div className="mb-14">
             <Link
               href="/universities"
-              className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-[#111111]"
+              className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#07182B] backdrop-blur-xl transition hover:bg-[#07182B] hover:text-white dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
             >
               ← Back to Universities
             </Link>
@@ -299,7 +286,7 @@ export default function UniversityPage({ params }) {
                   {university.name}
                 </h1>
 
-                <p className="mt-8 text-lg leading-9 text-white/65">
+                <p className="mt-8 text-lg leading-9 text-black/65 dark:text-white/65">
                   {university.ranking}
                 </p>
 
@@ -307,7 +294,7 @@ export default function UniversityPage({ params }) {
                   {university.programs.map((program) => (
                     <span
                       key={program}
-                      className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white/80"
+                      className="rounded-full border border-black/10 bg-white/70 px-5 py-3 text-sm font-medium text-[#07182B] backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-white/80"
                     >
                       {program}
                     </span>
@@ -320,7 +307,7 @@ export default function UniversityPage({ params }) {
             <Reveal delay={0.1}>
               <motion.div
                 whileHover={{ y: -5 }}
-                className="overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
+                className="overflow-hidden rounded-[3rem] border border-black/10 shadow-[0_30px_120px_rgba(0,0,0,0.12)] dark:border-white/10 dark:shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
               >
                 <img
                   src={university.image}
@@ -334,7 +321,7 @@ export default function UniversityPage({ params }) {
       </section>
 
       {/* INFO */}
-      <section className="relative bg-[#F8F6F2] px-5 py-20 text-[#111111] md:px-6 md:py-28">
+      <section className="relative bg-[#F7F9FC] px-5 py-20 text-[#07182B] transition-colors duration-500 dark:bg-[#06121F] dark:text-white md:px-6 md:py-28">
         <div className="container-custom">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -344,7 +331,7 @@ export default function UniversityPage({ params }) {
               ["Country", university.country],
             ].map(([title, value]) => (
               <Reveal key={title}>
-                <div className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+                <div className="rounded-[2.5rem] border border-black/10 bg-white/85 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                   <p className="text-xs uppercase tracking-[0.3em] text-[#B45309]">
                     {title}
                   </p>
@@ -361,12 +348,12 @@ export default function UniversityPage({ params }) {
           <div className="mt-20 grid gap-10 lg:grid-cols-2">
             {/* LEFT */}
             <Reveal>
-              <div className="rounded-[3rem] border border-black/5 bg-white p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+              <div className="rounded-[3rem] border border-black/10 bg-white/85 p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-xs uppercase tracking-[0.3em] text-[#B45309]">
                   Eligibility
                 </p>
 
-                <p className="mt-6 text-lg leading-9 text-black/70">
+                <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                   {university.eligibility}
                 </p>
 
@@ -375,7 +362,7 @@ export default function UniversityPage({ params }) {
                     Scholarships
                   </p>
 
-                  <p className="mt-6 text-lg leading-9 text-black/70">
+                  <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                     {university.scholarships}
                   </p>
                 </div>
@@ -385,7 +372,7 @@ export default function UniversityPage({ params }) {
                     Campus Life
                   </p>
 
-                  <p className="mt-6 text-lg leading-9 text-black/70">
+                  <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                     {university.campus}
                   </p>
                 </div>
@@ -394,12 +381,12 @@ export default function UniversityPage({ params }) {
 
             {/* RIGHT */}
             <Reveal delay={0.1}>
-              <div className="rounded-[3rem] border border-black/5 bg-white p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+              <div className="rounded-[3rem] border border-black/10 bg-white/85 p-10 shadow-[0_20px_80px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-xs uppercase tracking-[0.3em] text-[#B45309]">
                   Career Opportunities
                 </p>
 
-                <p className="mt-6 text-lg leading-9 text-black/70">
+                <p className="mt-6 text-lg leading-9 text-black/70 dark:text-white/70">
                   {university.careers}
                 </p>
 
@@ -412,9 +399,9 @@ export default function UniversityPage({ params }) {
                     {university.reviews.map((review) => (
                       <div
                         key={review}
-                        className="rounded-2xl border border-black/5 bg-[#F8F6F2] p-5"
+                        className="rounded-2xl border border-black/10 bg-[#F7F9FC] p-5 dark:border-white/10 dark:bg-white/[0.03]"
                       >
-                        <p className="leading-8 text-black/70">
+                        <p className="leading-8 text-black/70 dark:text-white/70">
                           “{review}”
                         </p>
                       </div>
@@ -433,18 +420,18 @@ export default function UniversityPage({ params }) {
           <Reveal>
             <motion.div
               whileHover={{ y: -4 }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-br from-[#F5A623]/15 via-white/[0.03] to-[#7C3AED]/10 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.4)] backdrop-blur-3xl md:p-16"
+              className="relative overflow-hidden rounded-[3rem] border border-black/10 bg-gradient-to-br from-[#F5A623]/10 via-white/80 to-cyan-100/70 p-10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] backdrop-blur-3xl transition-all duration-500 dark:border-white/10 dark:from-[#F5A623]/15 dark:via-white/[0.03] dark:to-[#7C3AED]/10 dark:shadow-[0_25px_100px_rgba(0,0,0,0.4)] md:p-16"
             >
               <div className="relative z-10 max-w-4xl">
                 <p className="mb-5 text-xs uppercase tracking-[0.3em] text-[#F5A623] sm:text-sm">
                   Start Your Journey
                 </p>
 
-                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+                <h2 className="text-4xl font-black leading-[1] tracking-[-0.04em] text-[#07182B] dark:text-white sm:text-5xl md:text-6xl">
                   Ready to apply to {university.name}?
                 </h2>
 
-                <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+                <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/65 sm:text-lg">
                   Get personalized admission guidance, scholarship assistance,
                   visa support, and application counselling from our expert
                   advisors.
@@ -460,7 +447,7 @@ export default function UniversityPage({ params }) {
 
                   <Link
                     href="/countries"
-                    className="w-fit rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#111111]"
+                    className="w-fit rounded-full border border-black/10 bg-white/70 px-8 py-4 font-semibold text-[#07182B] transition hover:bg-[#07182B] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#111111]"
                   >
                     Explore Countries
                   </Link>
