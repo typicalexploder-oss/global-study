@@ -39,7 +39,7 @@ const countries = [
     name: "India",
     type: "Online Degrees",
   },
-] ;
+];
 
 const navItemClass =
   "group relative whitespace-nowrap text-sm font-medium text-black/70 transition hover:text-black dark:text-white/75 dark:hover:text-white";
@@ -50,7 +50,6 @@ const underlineClass =
 export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
 
-  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [countryOpen, setCountryOpen] = useState(false);
@@ -58,17 +57,38 @@ export default function Navbar() {
   const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
-    setMounted(true);
+    let ticking = false;
+
+    const updateScroll = () => {
+      const nextScrolled = window.scrollY > 40;
+
+      setScrolled((prev) => {
+        if (prev !== nextScrolled) {
+          return nextScrolled;
+        }
+
+        return prev;
+      });
+
+      ticking = false;
+    };
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
     };
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const closeMobileMenu = () => {
@@ -92,13 +112,17 @@ export default function Navbar() {
             : "border-black/10 bg-white/90 backdrop-blur-2xl dark:border-white/5 dark:bg-[#07182B]/60"
         }`}
       >
-        {/* Decorative glow */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-40">
+        {/* Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-40"
+        >
           <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-cyan-500/10 blur-3xl" />
+
           <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-purple-500/10 blur-3xl" />
         </div>
 
-        {/* Decorative texture */}
+        {/* Texture */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden rounded-full opacity-[0.03]"
@@ -135,7 +159,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop menu */}
+        {/* Desktop Menu */}
         <div className="relative z-10 hidden items-center gap-5 lg:flex xl:gap-7">
           {navLinks.map(([label, href]) => (
             <Link key={label} href={href} className={navItemClass}>
@@ -144,7 +168,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Destinations dropdown */}
+          {/* Destinations */}
           <div
             className="relative"
             onMouseEnter={() => setCountryOpen(true)}
@@ -200,21 +224,21 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Right actions */}
+        {/* Actions */}
         <div className="relative z-10 flex shrink-0 items-center gap-3">
-          {/* Theme toggle */}
-          {mounted && (
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-              className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/5 dark:text-white lg:flex"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-          )}
+          {/* Theme Toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={
+              isDark ? "Switch to light mode" : "Switch to dark mode"
+            }
+            className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/5 dark:text-white lg:flex"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
 
-          {/* Apply button */}
+          {/* Apply */}
           <Link
             href="/apply"
             className="hidden shrink-0 rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-5 py-3 text-sm font-semibold text-[#06121F] shadow-[0_0_35px_rgba(245,166,35,0.25)] transition-all duration-300 hover:scale-105 xl:block xl:px-7 xl:text-base"
@@ -222,7 +246,7 @@ export default function Navbar() {
             Apply Now
           </Link>
 
-          {/* Mobile menu button */}
+          {/* Mobile Button */}
           <button
             type="button"
             onClick={() => setMobileOpen((open) => !open)}
@@ -231,12 +255,14 @@ export default function Navbar() {
             aria-controls="mobile-menu"
             className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-white lg:hidden"
           >
-            <span aria-hidden="true">{mobileOpen ? "✕" : "☰"}</span>
+            <span aria-hidden="true">
+              {mobileOpen ? "✕" : "☰"}
+            </span>
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -273,6 +299,7 @@ export default function Navbar() {
                       className="rounded-2xl bg-black/5 px-4 py-4 text-black/80 transition hover:bg-black/10 dark:bg-white/5 dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-white"
                     >
                       <span className="font-medium">{country.name}</span>
+
                       <span className="mt-1 block text-sm text-black/45 dark:text-white/40">
                         {country.type}
                       </span>
