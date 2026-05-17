@@ -1,23 +1,23 @@
 "use client";
-import Link from "next/link";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#040B14] px-5 py-20 text-white md:px-6 md:py-24">
+    <footer className="relative overflow-hidden border-t border-black/10 dark:border-white/10 bg-[#f8f6f2] dark:bg-[#040B14] px-5 py-20 text-[#071527] dark:text-white md:px-6 md:py-24">
       {/* BACKGROUND GLOWS */}
       <div className="absolute left-0 top-0 h-[220px] w-[220px] rounded-full bg-cyan-500/10 blur-3xl md:h-[300px] md:w-[300px]" />
 
       <div className="absolute bottom-0 right-0 h-[220px] w-[220px] rounded-full bg-[#F5A623]/10 blur-3xl md:h-[300px] md:w-[300px]" />
 
       {/* GRID TEXTURE */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg font-black backdrop-blur-xl md:h-14 md:w-14 md:text-xl">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/5 text-lg font-black backdrop-blur-xl md:h-14 md:w-14 md:text-xl">
                 GS
               </div>
 
@@ -38,13 +38,13 @@ export default function Footer() {
                   Global Study
                 </h2>
 
-                <p className="mt-1 text-sm text-white/40">
+                <p className="mt-1 text-sm text-black/40 dark:text-white/40">
                   Abroad Consultants
                 </p>
               </div>
             </div>
 
-            <p className="mt-6 max-w-md text-sm leading-8 text-white/60 md:mt-8 md:text-base">
+            <p className="mt-6 max-w-md text-sm leading-8 text-black/60 dark:text-white/60 md:mt-8 md:text-base">
               Helping students explore global education opportunities with
               professional guidance, university admissions support, and trusted
               counselling for a successful future abroad.
@@ -57,7 +57,7 @@ export default function Footer() {
                   key={social}
                   whileHover={{ y: -4 }}
                   href="#"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sm font-bold text-white/60 transition duration-300 hover:border-[#F5A623]/20 hover:bg-[#F5A623]/10 hover:text-[#F5A623] md:h-12 md:w-12"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/5 text-sm font-bold text-black/60 dark:text-white/60 transition duration-300 hover:border-[#F5A623]/20 hover:bg-[#F5A623]/10 hover:text-[#F5A623] md:h-12 md:w-12"
                 >
                   {social}
                 </motion.a>
@@ -66,85 +66,87 @@ export default function Footer() {
           </div>
 
           {/* NAVIGATION */}
-         <div className="space-y-5">
-  <Link href="/" className="block transition hover:text-[#F5A623]">
-    Home
-  </Link>
+          <div className="space-y-5">
+            <Link
+              href="/"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Home
+            </Link>
 
-  <Link
-    href="/countries/romania"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Destinations
-  </Link>
+            <Link
+              href="/countries/romania"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Destinations
+            </Link>
 
-  <Link
-    href="/about"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Why Choose Us
-  </Link>
+            <Link
+              href="/about"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Why Choose Us
+            </Link>
 
-  <Link
-    href="/success-stories"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Student Journey
-  </Link>
+            <Link
+              href="/success-stories"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Student Journey
+            </Link>
 
-  <Link
-    href="/contact"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Contact
-  </Link>
-</div>
+            <Link
+              href="/contact"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Contact
+            </Link>
+          </div>
 
           {/* DESTINATIONS */}
           <div className="space-y-5">
+            <Link
+              href="/countries/india"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              India
+            </Link>
 
-<Link
-  href="/countries/india"
-  className="block transition hover:text-[#F5A623]"
->
-  India
-</Link>
+            <Link
+              href="/countries/romania"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Romania
+            </Link>
 
-  <Link
-    href="/countries/romania"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Romania
-  </Link>
+            <Link
+              href="/countries/germany"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Germany
+            </Link>
 
-  <Link
-    href="/countries/germany"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Germany
-  </Link>
+            <Link
+              href="/countries/singapore"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Singapore
+            </Link>
 
-  <Link
-    href="/countries/singapore"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Singapore
-  </Link>
+            <Link
+              href="/countries/thailand"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              Thailand
+            </Link>
 
-  <Link
-    href="/countries/thailand"
-    className="block transition hover:text-[#F5A623]"
-  >
-    Thailand
-  </Link>
-
-  <Link
-    href="/countries/china"
-    className="block transition hover:text-[#F5A623]"
-  >
-    China
-  </Link>
-</div>
+            <Link
+              href="/countries/china"
+              className="block text-black/75 transition hover:text-[#F5A623] dark:text-white/75"
+            >
+              China
+            </Link>
+          </div>
 
           {/* CONTACT */}
           <div>
@@ -154,31 +156,31 @@ export default function Footer() {
 
             <div className="mt-6 space-y-4 md:mt-8 md:space-y-5">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-white/40 sm:text-sm">
+                <p className="text-xs uppercase tracking-[0.2em] text-black/40 dark:text-white/40 sm:text-sm">
                   Email
                 </p>
 
-                <p className="mt-2 text-sm text-white/70 md:text-base">
+                <p className="mt-2 text-sm text-black/70 dark:text-white/70 md:text-base">
                   hello@globalstudy.com
                 </p>
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-white/40 sm:text-sm">
+                <p className="text-xs uppercase tracking-[0.2em] text-black/40 dark:text-white/40 sm:text-sm">
                   Phone
                 </p>
 
-                <p className="mt-2 text-sm text-white/70 md:text-base">
+                <p className="mt-2 text-sm text-black/70 dark:text-white/70 md:text-base">
                   +91 98765 43210
                 </p>
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-white/40 sm:text-sm">
+                <p className="text-xs uppercase tracking-[0.2em] text-black/40 dark:text-white/40 sm:text-sm">
                   Office
                 </p>
 
-                <p className="mt-2 text-sm text-white/70 md:text-base">
+                <p className="mt-2 text-sm text-black/70 dark:text-white/70 md:text-base">
                   Kochi, Kerala, India
                 </p>
               </div>
@@ -187,15 +189,15 @@ export default function Footer() {
         </div>
 
         {/* DIVIDER */}
-        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent md:my-14" />
+        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-black/10 dark:via-white/10 to-transparent md:my-14" />
 
         {/* BOTTOM */}
         <div className="flex flex-col items-center justify-between gap-4 text-center lg:flex-row lg:text-left">
-          <p className="text-xs text-white/40 sm:text-sm">
+          <p className="text-xs text-black/40 dark:text-white/40 sm:text-sm">
             © 2026 Global Study Abroad Consultants. All rights reserved.
           </p>
 
-          <p className="text-xs text-white/30 sm:text-sm">
+          <p className="text-xs text-black/30 dark:text-white/30 sm:text-sm">
             Designed for ambitious students pursuing global opportunities.
           </p>
         </div>

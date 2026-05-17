@@ -8,7 +8,7 @@ export default function Countries() {
   return (
     <section
       id="countries"
-      className="relative overflow-hidden bg-gradient-to-b from-[#0B0B0B] via-[#121212] to-[#1A1A1A] px-5 py-20 text-white md:px-6 md:py-32"
+      className="relative overflow-hidden bg-[#f8f6f2] dark:bg-gradient-to-b dark:from-[#0B0B0B] dark:via-[#121212] dark:to-[#1A1A1A] px-5 py-20 text-[#111111] dark:text-white md:px-6 md:py-32"
     >
       {/* GLOWS */}
       <div className="absolute left-0 top-40 h-[300px] w-[300px] rounded-full bg-[#7C3AED]/10 blur-3xl md:h-[400px] md:w-[400px]" />
@@ -18,12 +18,12 @@ export default function Countries() {
       <div className="absolute bottom-0 left-1/3 h-[250px] w-[250px] rounded-full bg-[#F5A623]/10 blur-3xl md:h-[350px] md:w-[350px]" />
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />
@@ -44,7 +44,7 @@ export default function Countries() {
               </span>
             </h2>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/60 md:mt-8 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-black/65 dark:text-white/60 md:mt-8 md:text-lg">
               Discover international study opportunities across leading education
               destinations with globally recognized universities, career pathways,
               and student-focused environments.
@@ -66,7 +66,7 @@ export default function Countries() {
                 className="group relative block overflow-hidden rounded-[2.5rem] md:rounded-[3rem]"
               >
                 {/* CARD */}
-                <div className="relative h-[440px] overflow-hidden border border-white/10 shadow-[0_25px_100px_rgba(0,0,0,0.45)] sm:h-[500px] md:h-[560px]">
+                <div className="relative h-[440px] overflow-hidden border border-black/10 dark:border-white/10 shadow-[0_25px_100px_rgba(0,0,0,0.12)] dark:shadow-[0_25px_100px_rgba(0,0,0,0.45)] sm:h-[500px] md:h-[560px]">
                   {/* IMAGE */}
                   <img
                     src={country.image}
@@ -75,32 +75,32 @@ export default function Countries() {
                   />
 
                   {/* OVERLAYS */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-black/40" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/40 dark:from-black/80 dark:via-black/30 dark:to-black/40" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06121F] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent dark:from-[#06121F] dark:via-transparent dark:to-transparent opacity-80" />
 
                   {/* CONTENT */}
                   <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8 md:p-14">
                     {/* TOP */}
                     <div className="flex items-start justify-between">
-                      <div className="rounded-full border border-white/10 bg-white/10 px-4 py-2 backdrop-blur-xl">
-                        <p className="text-xs uppercase tracking-[0.25em] text-white/80 sm:text-sm">
+                      <div className="rounded-full border border-white/20 bg-white/20 px-4 py-2 backdrop-blur-xl">
+                        <p className="text-xs uppercase tracking-[0.25em] text-white sm:text-sm">
                           Destination 0{index + 1}
                         </p>
                       </div>
 
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/10 text-xl backdrop-blur-xl transition duration-300 group-hover:scale-110 group-hover:bg-[#F5A623] group-hover:text-black md:h-16 md:w-16 md:text-2xl">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/20 text-xl text-white backdrop-blur-xl transition duration-300 group-hover:scale-110 group-hover:bg-[#F5A623] group-hover:text-black md:h-16 md:w-16 md:text-2xl">
                         →
                       </div>
                     </div>
 
                     {/* BOTTOM */}
                     <div>
-                      <h3 className="text-4xl font-black leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-7xl">
+                      <h3 className="text-4xl font-black leading-[0.95] tracking-[-0.05em] text-white sm:text-5xl md:text-7xl">
                         {country.name}
                       </h3>
 
-                      <p className="mt-4 max-w-2xl text-base leading-7 text-white/70 md:mt-6 md:text-lg md:leading-8">
+                      <p className="mt-4 max-w-2xl text-base leading-7 text-white/80 md:mt-6 md:text-lg md:leading-8">
                         {country.tagline}
                       </p>
 
@@ -109,7 +109,7 @@ export default function Countries() {
                         {country.courses.slice(0, 4).map((course) => (
                           <div
                             key={course}
-                            className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs text-white/80 backdrop-blur-xl sm:text-sm"
+                            className="rounded-full border border-white/20 bg-white/15 px-4 py-2 text-xs text-white backdrop-blur-xl sm:text-sm"
                           >
                             {course}
                           </div>

@@ -7,25 +7,25 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-[#0B0B0B] via-[#121212] to-[#1A1A1A] px-5 pt-32 pb-20 md:px-6 md:pt-28"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#f8f6f2] dark:bg-gradient-to-br dark:from-[#06121F] dark:via-[#081A2E] dark:to-[#111827] px-5 pb-20 pt-32 md:px-6 md:pt-28"
     >
       {/* BACKGROUND OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#06121F] via-[#06121F]/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6f2] via-[#f8f6f2]/90 to-transparent dark:from-[#06121F] dark:via-[#06121F]/70 dark:to-transparent" />
 
       {/* GLOWS */}
-      <div className="absolute left-0 top-20 h-[500px] w-[500px] rounded-full bg-[#7C3AED]/10 blur-3xl" />
+      <div className="absolute left-0 top-20 h-[500px] w-[500px] rounded-full bg-[#7C3AED]/5 dark:bg-[#7C3AED]/10 blur-3xl" />
 
-      <div className="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-3xl" />
+      <div className="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-purple-300/10 dark:bg-purple-500/10 blur-3xl" />
 
-      <div className="absolute bottom-0 left-1/3 h-[350px] w-[350px] rounded-full bg-[#F5A623]/10 blur-3xl" />
+      <div className="absolute bottom-0 left-1/3 h-[350px] w-[350px] rounded-full bg-[#F5A623]/5 dark:bg-[#F5A623]/10 blur-3xl" />
 
       {/* GRID TEXTURE */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "26px 26px",
           }}
         />
@@ -36,58 +36,57 @@ export default function Hero() {
         <Reveal>
           <div>
             {/* BADGE */}
-            <div className="mb-6 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs text-white/80 backdrop-blur sm:text-sm">
+            <div className="mb-6 inline-flex rounded-full border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/10 px-4 py-2 text-xs text-black/70 dark:text-white/80 backdrop-blur sm:text-sm">
               Study Abroad Guidance for Students & Parents
             </div>
 
             {/* HEADING */}
-           <motion.h1
-  className="text-5xl font-black leading-[0.9] tracking-[-0.05em] sm:text-6xl md:text-8xl"
-  initial="hidden"
-  animate="visible"
-  variants={{
-    visible: {
-      transition: {
-        staggerChildren: 0.18,
-      },
-    },
-  }}
->
-  {["Your", "future", "begins", "beyond", "borders."].map(
-    (word, index) => (
-      <motion.span
-        key={index}
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: 40,
-            filter: "blur(8px)",
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-          },
-        }}
-        transition={{
-          duration: 0.7,
-          ease: "easeOut",
-        }}
-        className={`mr-4 inline-block ${
-          word === "begins" ||
-          word === "beyond"
-            ? "text-[#F5A623]"
-            : "text-white"
-        }`}
-      >
-        {word}
-      </motion.span>
-    )
-  )}
-</motion.h1>
+            <motion.h1
+              className="text-5xl font-black leading-[0.9] tracking-[-0.05em] sm:text-6xl md:text-8xl"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.18,
+                  },
+                },
+              }}
+            >
+              {["Your", "future", "begins", "beyond", "borders."].map(
+                (word, index) => (
+                  <motion.span
+                    key={index}
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        y: 40,
+                        filter: "blur(8px)",
+                      },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                      },
+                    }}
+                    transition={{
+                      duration: 0.7,
+                      ease: "easeOut",
+                    }}
+                    className={`mr-4 inline-block ${
+                      word === "begins" || word === "beyond"
+                        ? "text-[#F5A623]"
+                        : "text-[#111111] dark:text-white"
+                    }`}
+                  >
+                    {word}
+                  </motion.span>
+                )
+              )}
+            </motion.h1>
 
             {/* TEXT */}
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-black/70 dark:text-white/75 sm:text-lg">
               Explore trusted study abroad opportunities in Romania, Germany,
               Singapore, Thailand, and China with expert guidance from country
               selection to university admission.
@@ -104,7 +103,7 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="w-fit rounded-full border border-white/25 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-[#071527]"
+                className="w-fit rounded-full border border-black/10 dark:border-white/25 bg-white/70 dark:bg-transparent px-8 py-4 font-semibold text-[#111111] dark:text-white transition hover:bg-[#111111] hover:text-white dark:hover:bg-white dark:hover:text-[#071527]"
               >
                 Book Free Counselling
               </a>
@@ -118,7 +117,7 @@ export default function Hero() {
             {/* GLOW */}
             <div className="absolute -right-20 top-10 h-72 w-72 rounded-full bg-[#F5A623]/10 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-3xl">
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-3xl">
               {/* HEADER */}
               <div className="mb-6 flex items-center justify-between">
                 <div>
@@ -126,7 +125,7 @@ export default function Hero() {
                     Destinations
                   </p>
 
-                  <h3 className="mt-3 text-3xl font-bold text-white">
+                  <h3 className="mt-3 text-3xl font-bold text-[#111111] dark:text-white">
                     Global Opportunities
                   </h3>
                 </div>
@@ -149,7 +148,7 @@ export default function Hero() {
                     key={country}
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
-                    className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-5 transition duration-500 hover:bg-white/10"
+                    className="group relative overflow-hidden rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/5 p-5 transition duration-500 hover:bg-black/[0.05] dark:hover:bg-white/10"
                   >
                     {/* SHINE */}
                     <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
@@ -158,16 +157,16 @@ export default function Hero() {
 
                     <div className="relative z-10 flex items-center justify-between">
                       <div>
-                        <h4 className="text-xl font-semibold text-white">
+                        <h4 className="text-xl font-semibold text-[#111111] dark:text-white">
                           {country}
                         </h4>
 
-                        <p className="mt-1 text-sm text-white/60">
+                        <p className="mt-1 text-sm text-black/60 dark:text-white/60">
                           {desc}
                         </p>
                       </div>
 
-                      <div className="text-white/30 transition duration-300 group-hover:translate-x-1 group-hover:text-[#F5A623]">
+                      <div className="text-black/30 transition duration-300 group-hover:translate-x-1 group-hover:text-[#F5A623] dark:text-white/30">
                         0{index + 1}
                       </div>
                     </div>
@@ -184,13 +183,13 @@ export default function Hero() {
                 ].map(([value, label]) => (
                   <div
                     key={label}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center"
+                    className="rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/5 p-4 text-center"
                   >
-                    <h4 className="text-2xl font-bold text-white">
+                    <h4 className="text-2xl font-bold text-[#111111] dark:text-white">
                       {value}
                     </h4>
 
-                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/50">
+                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-black/50 dark:text-white/50">
                       {label}
                     </p>
                   </div>
@@ -202,8 +201,8 @@ export default function Hero() {
       </div>
 
       {/* SCROLL TEXT */}
-      <div className="absolute bottom-12 left-10 hidden items-center gap-3 text-sm uppercase tracking-[0.25em] text-white/40 md:flex">
-        <span className="h-px w-16 bg-white/20" />
+      <div className="absolute bottom-12 left-10 hidden items-center gap-3 text-sm uppercase tracking-[0.25em] text-black/40 dark:text-white/40 md:flex">
+        <span className="h-px w-16 bg-black/20 dark:bg-white/20" />
         Scroll to explore
       </div>
     </section>

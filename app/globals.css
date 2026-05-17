@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f6f2;
+  --background: #f5f7fb;
   --foreground: #111111;
 
   --card: #ffffff;
@@ -59,6 +59,15 @@ body {
 }
 
 .hero-pattern {
+  background-color: #f8f6f2;
+
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+
+  background-size: 8px 8px;
+}
+
+.dark .hero-pattern {
   background-image:
     radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     linear-gradient(

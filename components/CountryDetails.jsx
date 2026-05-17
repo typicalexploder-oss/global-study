@@ -6,19 +6,19 @@ import Reveal from "@/components/Reveal";
 
 export default function CountryDetails() {
   return (
-    <section className="relative overflow-hidden bg-[#06121F] text-white">
+    <section className="relative overflow-hidden bg-[#f8f6f2] dark:bg-[#06121F] text-[#071527] dark:text-white">
       {/* BACKGROUND GLOWS */}
       <div className="absolute left-0 top-40 h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-3xl md:h-[500px] md:w-[500px]" />
 
       <div className="absolute right-0 bottom-0 h-[250px] w-[250px] rounded-full bg-[#F5A623]/10 blur-3xl md:h-[400px] md:w-[400px]" />
 
       {/* GRID TEXTURE */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, white 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "26px 26px",
           }}
         />
@@ -40,17 +40,17 @@ export default function CountryDetails() {
           <div
             key={country.slug}
             id={country.slug}
-            className="relative border-b border-white/10 px-5 py-20 md:px-6 md:py-28"
+            className="relative border-b border-black/10 dark:border-white/10 px-5 py-20 md:px-6 md:py-28"
           >
             <div className="container-custom relative z-10">
               {/* ATMOSPHERIC IMAGE */}
               <img
                 src={country.image}
                 alt={country.name}
-                className="absolute right-0 top-0 h-full w-full object-cover opacity-[0.04] blur-[2px] lg:w-1/2"
+                className="absolute right-0 top-0 h-full w-full object-cover opacity-[0.03] dark:opacity-[0.04] blur-[2px] lg:w-1/2"
               />
 
-              <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start md:gap-16">
+              <div className="grid gap-12 md:gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 {/* LEFT SIDE */}
                 <Reveal>
                   <motion.div
@@ -70,7 +70,7 @@ export default function CountryDetails() {
                       {country.name}
                     </h2>
 
-                    <p className="mt-6 max-w-xl text-base leading-8 text-white/65 sm:text-lg md:mt-8 md:leading-9">
+                    <p className="mt-6 max-w-xl text-base leading-8 text-[#071527]/65 dark:text-white/65 sm:text-lg md:mt-8 md:leading-9">
                       {country.intro}
                     </p>
 
@@ -78,7 +78,7 @@ export default function CountryDetails() {
                     <div className="mt-8 grid grid-cols-2 gap-4 md:mt-10 md:gap-5">
                       <motion.div
                         whileHover={{ y: -4 }}
-                        className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl md:p-6"
+                        className="rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/[0.04] p-5 backdrop-blur-xl md:p-6"
                       >
                         <h3
                           className="text-3xl font-black md:text-4xl"
@@ -87,14 +87,14 @@ export default function CountryDetails() {
                           {country.courses.length}+
                         </h3>
 
-                        <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/45 sm:text-sm">
+                        <p className="mt-2 text-xs uppercase tracking-[0.2em] text-black/45 dark:text-white/45 sm:text-sm">
                           Courses
                         </p>
                       </motion.div>
 
                       <motion.div
                         whileHover={{ y: -4 }}
-                        className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl md:p-6"
+                        className="rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/[0.04] p-5 backdrop-blur-xl md:p-6"
                       >
                         <h3
                           className="text-3xl font-black md:text-4xl"
@@ -103,7 +103,7 @@ export default function CountryDetails() {
                           {country.universities.length}+
                         </h3>
 
-                        <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/45 sm:text-sm">
+                        <p className="mt-2 text-xs uppercase tracking-[0.2em] text-black/45 dark:text-white/45 sm:text-sm">
                           Universities
                         </p>
                       </motion.div>
@@ -136,9 +136,9 @@ export default function CountryDetails() {
                     {/* WHY CHOOSE */}
                     <motion.div
                       whileHover={{ y: -4 }}
-                      className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_10px_60px_rgba(0,0,0,0.3)] backdrop-blur-xl md:rounded-[2.5rem] md:p-8"
+                      className="rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/[0.04] p-6 shadow-[0_10px_60px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_60px_rgba(0,0,0,0.3)] backdrop-blur-xl md:rounded-[2.5rem] md:p-8"
                     >
-                      <h3 className="text-2xl font-black text-white md:text-3xl">
+                      <h3 className="text-2xl font-black text-[#071527] dark:text-white md:text-3xl">
                         Why choose to study here?
                       </h3>
 
@@ -158,7 +158,7 @@ export default function CountryDetails() {
                               ✓
                             </div>
 
-                            <p className="text-sm leading-7 text-white/70 md:text-base">
+                            <p className="text-sm leading-7 text-[#071527]/70 dark:text-white/70 md:text-base">
                               {item}
                             </p>
                           </div>
@@ -169,14 +169,14 @@ export default function CountryDetails() {
                     {/* COURSES + UNIVERSITIES */}
                     <div
                       id={index === 0 ? "courses" : undefined}
-                      className="grid gap-6 lg:grid-cols-2 md:gap-8"
+                      className="grid gap-6 md:gap-8 lg:grid-cols-2"
                     >
                       {/* COURSES */}
                       <motion.div
                         whileHover={{ y: -4 }}
-                        className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_10px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl md:rounded-[2.5rem] md:p-8"
+                        className="rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/[0.04] p-6 shadow-[0_10px_60px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl md:rounded-[2.5rem] md:p-8"
                       >
-                        <h3 className="text-2xl font-black text-white md:text-3xl">
+                        <h3 className="text-2xl font-black text-[#071527] dark:text-white md:text-3xl">
                           Courses
                         </h3>
 
@@ -184,7 +184,7 @@ export default function CountryDetails() {
                           {country.courses.map((course) => (
                             <span
                               key={course}
-                              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/75 backdrop-blur-xl transition sm:text-sm"
+                              className="rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/5 px-4 py-2 text-xs text-[#071527]/75 dark:text-white/75 backdrop-blur-xl transition sm:text-sm"
                               style={{
                                 borderColor: `${accent}20`,
                               }}
@@ -198,9 +198,9 @@ export default function CountryDetails() {
                       {/* UNIVERSITIES */}
                       <motion.div
                         whileHover={{ y: -4 }}
-                        className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_10px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl md:rounded-[2.5rem] md:p-8"
+                        className="rounded-[2rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/[0.04] p-6 shadow-[0_10px_60px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl md:rounded-[2.5rem] md:p-8"
                       >
-                        <h3 className="text-2xl font-black text-white md:text-3xl">
+                        <h3 className="text-2xl font-black text-[#071527] dark:text-white md:text-3xl">
                           Universities
                         </h3>
 
@@ -208,7 +208,7 @@ export default function CountryDetails() {
                           {country.universities.map((university) => (
                             <div
                               key={university}
-                              className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/70 transition md:text-base"
+                              className="rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/5 p-4 text-sm text-[#071527]/70 dark:text-white/70 transition md:text-base"
                             >
                               {university}
                             </div>

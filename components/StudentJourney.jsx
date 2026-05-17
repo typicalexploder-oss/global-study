@@ -45,7 +45,7 @@ export default function StudentJourney() {
   return (
     <section
       id="journey"
-      className="relative overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-white to-[#EEF4FF] px-6 py-32 text-[#071527]"
+      className="relative overflow-hidden bg-[#f8f6f2] dark:bg-gradient-to-b dark:from-[#071527] dark:via-[#081B34] dark:to-[#050816] px-6 py-32 text-[#071527] dark:text-white"
     >
       {/* GLOWS */}
       <div className="absolute left-0 top-40 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-3xl" />
@@ -55,12 +55,12 @@ export default function StudentJourney() {
       <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-[#F5A623]/10 blur-3xl" />
 
       {/* GRID TEXTURE */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
         <div
           className="h-full w-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle, black 1px, transparent 1px)",
+              "radial-gradient(circle, currentColor 1px, transparent 1px)",
             backgroundSize: "26px 26px",
           }}
         />
@@ -81,7 +81,7 @@ export default function StudentJourney() {
               </span>
             </h2>
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#071527]/65">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#071527]/65 dark:text-white/65">
               Every student journey is guided with professional support, clarity,
               and structured planning from the first counselling session to
               successful university admission abroad.
@@ -92,7 +92,7 @@ export default function StudentJourney() {
         {/* TIMELINE */}
         <div className="relative">
           {/* TIMELINE LINE */}
-          <div className="absolute left-8 top-0 hidden h-full w-px bg-gradient-to-b from-[#F5A623]/50 via-[#071527]/10 to-transparent lg:block" />
+          <div className="absolute left-8 top-0 hidden h-full w-px bg-gradient-to-b from-[#F5A623]/50 via-black/10 dark:via-white/10 to-transparent lg:block" />
 
           {/* TIMELINE STEPS */}
           <div className="space-y-12">
@@ -109,7 +109,7 @@ export default function StudentJourney() {
                   }`}
                 >
                   {/* NUMBER */}
-                  <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border border-[#F5A623]/30 bg-white/70 text-2xl font-black text-[#F5A623] shadow-[0_0_50px_rgba(245,166,35,0.15)] backdrop-blur-2xl">
+                  <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border border-[#F5A623]/30 bg-white/80 dark:bg-white/10 text-2xl font-black text-[#F5A623] shadow-[0_0_50px_rgba(245,166,35,0.15)] backdrop-blur-2xl">
                     {step.number}
 
                     {/* INNER GLOW */}
@@ -120,11 +120,11 @@ export default function StudentJourney() {
                   <motion.div
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.3 }}
-                    className="group relative overflow-hidden rounded-[2.7rem] border border-black/10 bg-white/70 p-10 shadow-[0_15px_70px_rgba(0,0,0,0.08)] backdrop-blur-3xl transition duration-500 hover:border-[#F5A623]/20 hover:shadow-[0_20px_100px_rgba(245,166,35,0.15)] lg:max-w-3xl"
+                    className="group relative overflow-hidden rounded-[2.7rem] border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/[0.04] p-10 shadow-[0_15px_70px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_70px_rgba(0,0,0,0.3)] backdrop-blur-3xl transition duration-500 hover:border-[#F5A623]/20 hover:shadow-[0_20px_100px_rgba(245,166,35,0.15)] lg:max-w-3xl"
                   >
                     {/* SHINE EFFECT */}
                     <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
-                      <div className="absolute inset-y-0 -left-1/2 w-1/2 rotate-12 bg-white/40 blur-3xl transition-all duration-1000 group-hover:left-[120%]" />
+                      <div className="absolute inset-y-0 -left-1/2 w-1/2 rotate-12 bg-white/30 dark:bg-white/10 blur-3xl transition-all duration-1000 group-hover:left-[120%]" />
                     </div>
 
                     {/* TOP LIGHT */}
@@ -135,11 +135,11 @@ export default function StudentJourney() {
                         Step {step.number}
                       </p>
 
-                      <h3 className="mt-4 text-4xl font-black tracking-[-0.03em] text-[#071527]">
+                      <h3 className="mt-4 text-4xl font-black tracking-[-0.03em] text-[#071527] dark:text-white">
                         {step.title}
                       </h3>
 
-                      <p className="mt-6 leading-8 text-[#071527]/65">
+                      <p className="mt-6 leading-8 text-[#071527]/65 dark:text-white/65">
                         {step.text}
                       </p>
 
