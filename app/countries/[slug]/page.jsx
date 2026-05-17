@@ -205,6 +205,75 @@ india: {
       },
     ],
   },
+thailand: {
+  name: "Thailand",
+  tagline: "Affordable education with cultural diversity.",
+  image:
+    "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1800&auto=format&fit=crop",
+  tuition: "$2,000 - $8,000 / year",
+  living: "$300 - $800 / month",
+  intake: "January & August",
+  visa: "Student visa processing: 2-5 weeks",
+  duration: "2 - 4 Years",
+  eligibility:
+    "Academic transcripts, passport, and English proficiency.",
+  scholarships:
+    "Selected university scholarships available.",
+  careers:
+    "Hospitality, tourism, business, healthcare, and IT.",
+  universities: [
+    "Mahidol University",
+    "Chulalongkorn University",
+  ],
+  programs: [
+    "Business",
+    "Hospitality",
+    "IT",
+    "Healthcare",
+  ],
+  faqs: [
+    {
+      q: "Is Thailand affordable for students?",
+      a: "Yes, Thailand offers affordable tuition and living costs.",
+    },
+  ],
+},
+
+china: {
+  name: "China",
+  tagline: "Modern universities and global opportunities.",
+  image:
+    "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1800&auto=format&fit=crop",
+  tuition: "$3,000 - $10,000 / year",
+  living: "$400 - $900 / month",
+  intake: "March & September",
+  visa: "Student visa processing: 2-6 weeks",
+  duration: "3 - 5 Years",
+  eligibility:
+    "Academic records, passport, and university admission.",
+  scholarships:
+    "CSC scholarships and university grants available.",
+  careers:
+    "Engineering, medicine, AI, business, and technology.",
+  universities: [
+    "Tsinghua University",
+    "Peking University",
+  ],
+  programs: [
+    "Medicine",
+    "Engineering",
+    "AI",
+    "Business",
+  ],
+  faqs: [
+    {
+      q: "Is China good for international students?",
+      a: "Yes, China offers strong universities and modern campuses.",
+    },
+  ],
+},
+
+
 };
 
 export default function CountryPage({ params }) {
