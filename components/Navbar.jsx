@@ -233,7 +233,7 @@ export default function Navbar() {
             aria-label={
               isDark ? "Switch to light mode" : "Switch to dark mode"
             }
-            className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/5 dark:text-white lg:flex"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-black/5 text-black backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/5 dark:text-white"
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
