@@ -1,5 +1,6 @@
 "use client";
-
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -52,7 +53,9 @@ export default function Navbar() {
       name: "India",
       type: "Online Degrees",
     },
+
   ];
+  const { theme, setTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full px-3 pt-3 sm:px-4 sm:pt-4">
@@ -166,77 +169,94 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* APPLY BUTTON */}
-        <div className="relative z-10 hidden xl:block">
+{/* RIGHT ACTIONS */}
+<div className="relative z-10 flex items-center gap-3">
+  {/* THEME TOGGLE */}
+  <button
+    onClick={() =>
+      setTheme(theme === "dark" ? "light" : "dark")
+    }
+    className="hidden lg:flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl transition hover:scale-105"
+  >
+    {theme === "dark" ? (
+      <Sun size={18} />
+    ) : (
+      <Moon size={18} />
+    )}
+  </button>
+
+  {/* APPLY BUTTON */}
+  <div className="hidden xl:block">
+    <Link
+      href="/apply"
+      className="rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-5 xl:px-7 py-3 text-sm xl:text-base font-semibold text-[#06121F] shadow-[0_0_35px_rgba(245,166,35,0.25)] transition-all duration-300 hover:scale-105"
+    >
+      Apply Now
+    </Link>
+  </div>
+
+  {/* MOBILE BUTTON */}
+  <button
+    onClick={() => setMobileOpen(!mobileOpen)}
+    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl lg:hidden"
+  >
+    {mobileOpen ? "✕" : "☰"}
+  </button>
+</div>
+</motion.nav>
+
+{/* MOBILE MENU */}
+<AnimatePresence>
+  {mobileOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.3 }}
+      className="mx-auto mt-4 max-h-[85vh] overflow-y-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#07182B]/95 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur-3xl lg:hidden"
+    >
+      <div className="flex flex-col gap-5">
+        {navLinks.map(([label, href]) => (
           <Link
-            href="/apply"
-            className="rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-5 xl:px-7 py-3 text-sm xl:text-base font-semibold text-[#06121F] shadow-[0_0_35px_rgba(245,166,35,0.25)] transition-all duration-300 hover:scale-105"
+            key={label}
+            href={href}
+            onClick={() => setMobileOpen(false)}
+            className="text-lg text-white/80 transition hover:text-white"
           >
-            Apply Now
+            {label}
           </Link>
+        ))}
+
+        <div className="border-t border-white/10 pt-4">
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-white/40">
+            Destinations
+          </p>
+
+          <div className="flex flex-col gap-3">
+            {countries.map((country) => (
+              <Link
+                key={country.slug}
+                href={`/countries/${country.slug}`}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-2xl bg-white/5 px-4 py-4 text-white/80 transition hover:bg-white/10 hover:text-white"
+              >
+                {country.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
-        {/* MOBILE BUTTON */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl lg:hidden"
+        <Link
+          href="/apply"
+          onClick={() => setMobileOpen(false)}
+          className="mt-4 rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-6 py-3 text-center font-semibold text-[#06121F]"
         >
-          {mobileOpen ? "✕" : "☰"}
-        </button>
-      </motion.nav>
-
-      {/* MOBILE MENU */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.3 }}
-            className="mx-auto mt-4 max-h-[85vh] overflow-y-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#07182B]/95 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur-3xl lg:hidden"
-          >
-            <div className="flex flex-col gap-5">
-              {navLinks.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-lg text-white/80 transition hover:text-white"
-                >
-                  {label}
-                </Link>
-              ))}
-
-              <div className="border-t border-white/10 pt-4">
-                <p className="mb-4 text-sm uppercase tracking-[0.3em] text-white/40">
-                  Destinations
-                </p>
-
-                <div className="flex flex-col gap-3">
-                  {countries.map((country) => (
-                    <Link
-                      key={country.slug}
-                      href={`/countries/${country.slug}`}
-                      onClick={() => setMobileOpen(false)}
-                      className="rounded-2xl bg-white/5 px-4 py-4 text-white/80 transition hover:bg-white/10 hover:text-white"
-                    >
-                      {country.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href="/apply"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 rounded-full bg-gradient-to-r from-[#F5A623] to-[#FFD27A] px-6 py-3 text-center font-semibold text-[#06121F]"
-              >
-                Apply Now
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          Apply Now
+        </Link>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </header>
   );
 }
