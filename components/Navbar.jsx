@@ -9,14 +9,11 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
 
-const [mounted, setMounted] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [mobileOpen, setMobileOpen] = useState(false);
 const [countryOpen, setCountryOpen] = useState(false);
 
-useEffect(() => {
-  setMounted(true);
-}, []);
+
 
 useEffect(() => {
   const handleScroll = () => {
@@ -178,19 +175,18 @@ useEffect(() => {
         {/* RIGHT ACTIONS */}
        <div className="relative z-10 flex items-center gap-3">
   {/* THEME TOGGLE */}
-  <button
-    onClick={() =>
-      setTheme(theme === "dark" ? "light" : "dark")
-    }
-    className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-black dark:text-white backdrop-blur-xl transition hover:scale-105 lg:flex"
-  >
-    {mounted &&
-      (theme === "dark" ? (
-        <Sun size={18} />
-      ) : (
-        <Moon size={18} />
-      ))}
-  </button>
+<button
+  onClick={() =>
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+  className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-black dark:text-white backdrop-blur-xl transition hover:scale-105 lg:flex"
+>
+  {theme === "dark" ? (
+    <Moon size={18} />
+  ) : (
+    <Sun size={18} />
+  )}
+</button>
 
           {/* APPLY BUTTON */}
           <div className="hidden xl:block">
