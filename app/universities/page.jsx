@@ -20,7 +20,7 @@ const universities = [
   name: "Yenepoya Online",
   country: "India",
   image:
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800&auto=format&fit=crop",
   tagline: "Flexible UGC Approved Learning",
 },
 
@@ -57,7 +57,7 @@ const universities = [
     country: "Thailand",
     ranking: "Top University in Thailand",
     image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1800&auto=format&fit=crop",
   },
 
   {

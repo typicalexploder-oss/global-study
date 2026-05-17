@@ -132,7 +132,7 @@ const universities = {
   country: "India",
   ranking: "Leading Flexible Online Learning University",
   image:
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1800&auto=format&fit=crop",
   tuition: "₹35,000 - ₹120,000 / year",
   duration: "2 - 3 Years",
   intake: "January & July",
@@ -191,7 +191,7 @@ const universities = {
   country: "Thailand",
   ranking: "Top University in Thailand",
   image:
-    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1800&auto=format&fit=crop",
   tuition: "$3,000 - $10,000 / year",
   duration: "3 - 4 Years",
   intake: "January & August",
